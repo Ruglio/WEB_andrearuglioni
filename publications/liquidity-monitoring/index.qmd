@@ -1,0 +1,21 @@
+---
+title: "Flagging Low Incoming Liquidity, and Explaining Why"
+date: '2026-07-01'
+author:
+- name: Andrea Ruglioni
+  orcid: 0009-0003-5208-5907
+- name: Aurel Ruben Mäder
+- name: Damir Filipović
+
+categories:
+  - Liquidity risk
+  - Payment forecasting
+  - Probabilistic modeling
+
+subtitle: "Working paper, 2026 -- with the Swiss National Bank"
+description: "A monitoring signal for unusually low incoming payments, and a way to split the blame for a shortfall across counterparties that adds up exactly."
+---
+
+## Abstract
+
+Every incoming payment gets its own probabilistic forecast, built from a distribution over whether it arrives at all and how large it is if it does. The operational question is not whether the forecast was accurate on average, but whether what actually arrived is unusually low, and which counterparties are responsible. This project defines a monitoring signal for exactly that -- computed directly rather than by simulation -- and a *responsibility* measure that splits the signal across incoming counterparties in a way that adds up exactly to the aggregate shortfall, rather than relying on an ad hoc allocation rule.

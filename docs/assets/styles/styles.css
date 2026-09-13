@@ -1,6 +1,18 @@
 .navbar {
     --bs-navbar-padding-y: 0.5rem;
-    border-bottom: groove;
+}
+
+.subtitle {
+    font-style: italic;
+}
+
+h2 {
+    text-align: left;
+    border-bottom: none;
+    padding-left: 10px;
+    border-left-width: 25px;
+    margin-left: -35px;
+    border-left-style: solid;
 }
 
 .footer-link {
@@ -35,4 +47,48 @@ a.nav-link.active::after {
 
 div.quarto-post {
     border-bottom: 3px solid #dee2e6;
+}
+
+.logo-img {
+    transition: filter 0.15s ease-in-out;
+}
+
+.pub-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.pub-item {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.25);
+}
+
+.pub-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.pub-title a {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.pub-authors {
+    font-size: 0.95rem;
+    opacity: 0.85;
+}
+
+.pub-venue {
+    font-style: italic;
+    font-size: 0.9rem;
+    opacity: 0.75;
+    margin-top: 0.15rem;
+}
+
+.pub-links {
+    margin-top: 0.35rem;
+    font-size: 0.85rem;
+    display: flex;
+    gap: 0.75rem;
 }

@@ -1,9 +1,5 @@
 ---
 pagetitle: Teachings
-
-format:
-  html:
-    css: ../assets/styles/style_personalized.css
 ---
 
 ## Courses
@@ -11,9 +7,36 @@ format:
 #### [Probability and Stochastic Calculus](https://edu.epfl.ch/coursebook/en/probability-and-stochastic-calculus-FIN-415)
 
 *EPFL*<br>
-*Fall 2024*, TA as PhD student
+*Fall 2024 -- Present*, TA as PhD student
 
 This course gives an introduction to probability theory and stochastic calculus in discrete and continuous time. The fundamental notions and techniques introduced in this course have many applications in finance, for example for option pricing, risk management and optimal portfolio choice.
+
+
+
+#### [Quantitative Financial Risk Management](https://edu.epfl.ch/coursebook/en/quantitative-financial-risk-management-FIN-417)
+
+*EPFL*<br>
+*Fall 2024 -- Present*, TA as PhD student
+
+How to measure and manage financial risk in practice: statistical models for risk factors, copula-based dependence structures, and credit risk. A fair share of the exercises are about actually implementing volatility and credit risk models, not just deriving them on paper.
+
+
+
+#### [Investments](https://edu.epfl.ch/coursebook/en/investments-FIN-405)
+
+*EPFL*<br>
+*Spring 2025*, TA as PhD student
+
+A broad course on investment analysis -- portfolio choice, asset pricing, market efficiency, behavioral finance -- with trading strategies and dynamic asset allocation woven in throughout.
+
+
+
+#### [Introduction to Data-Driven Business Analytics](https://edu.epfl.ch/coursebook/en/introduction-to-data-driven-business-analytics-MGT-302)
+
+*EPFL*<br>
+*Spring 2025*, TA as PhD student
+
+Machine learning for business problems: supervised and unsupervised methods, deep learning, time series, and a bit of risk management and portfolio optimization along the way.
 
 
 
@@ -22,8 +45,4 @@ This course gives an introduction to probability theory and stochastic calculus 
 *KTH Royal Institute of Technology*<br>
 *Fall 2023*, TA as graduate student
 
-The course contents will mainly be based on the following areas:
-
-- Queueing models based on Markov processes, including models for queueing networks.
-- Models for inventory optimization, deterministic as well as stochastic.
-- Scheduling methods for production systems and transport systems, and route planning
+Built around three areas: queueing theory and queueing networks, inventory optimization (deterministic and stochastic), and scheduling and routing for production and transport systems.

@@ -1,12 +1,33 @@
 ---
+pagetitle: Andrea Ruglioni
 title: Andrea Ruglioni
 subtitle: Doctoral candidate in quantitative finance<br>Swiss Finance Institute, EPFL
-image: assets/images/logo.svg
-image-alt: logo image
+image: assets/images/profile.jpg
+image-alt: Andrea Ruglioni
+
+aliases:
+  - /about/
+  - /about/index.html
+
+listing:
+  - id: publications
+    contents:
+      - "../publications/*/**/index.qmd"
+      - "../publications/*/**/index.md"
+    sort: date desc
+    type: default
+    categories: false
+    sort-ui: false
+    filter-ui: false
+    fields: [title, author, subtitle]
+    max-items: 3
+    image-align: left
+    template: publications/pub-list-home.ejs.md
 
 about:
-  template: solana
+  template: trestles
   id: hero-heading
+  image-shape: rounded
   links:
     - icon: github
       aria-label: GitHub
@@ -23,35 +44,6 @@ about:
       aria-label: email
       href: mailto:andrea.ruglioni@epfl.ch
 
-listing: 
-
-  - id: blog
-    contents: 
-      - "../blog/*/**/index.qmd"
-      - "../blog/*/**/index.md"
-    sort: date desc
-    type: grid
-    grid-columns: 3
-    categories: false
-    sort-ui: false
-    filter-ui: false
-    fields: [title, subtitle, image]
-    max-items: 3
-    image-height: 200px
-
-  - id: publications
-    contents: 
-      - "../publications/*/**/index.qmd"
-      - "../publications/*/**/index.md"
-    sort: date desc
-    type: default
-    categories: false
-    sort-ui: false
-    filter-ui: false
-    fields: [title, subtitle, author, date]
-    max-items: 3
-    image-align: left
-
 format:
   html:
     css: assets/styles/style_personalized.css
@@ -63,27 +55,135 @@ page-layout: full
 
 ::: {#hero-heading}
 
-Welcome to my personal website! I'm a PhD student at the Swiss Finance Institute, EPFL.
+I'm a PhD student in Quantitative Finance at the Swiss Finance Institute, EPFL. My research sits between ML, optimization, and finance -- I enjoy both building new methods and digging into empirical questions in these areas.
 
-Here, you can find my latest blog posts, publications, teaching experience, and more.
-Feel free to reach out if you have any questions or comments.
-
-[Learn more about me &rarr;](/about/index.qmd)
+Get in touch by [sending me an email](mailto:andrea.ruglioni@epfl.ch) {{< fa feather-pointed >}}
 
 :::
 
 
+<br>
 
-## [Publications &rarr;](/publications/index.qmd)
+
+## Education
+
+:::::: {.grid}
+
+
+
+::::: {.g-col-12 .g-col-md-6}
+
+:::: {.grid}
+
+::: {.g-col-12 .g-col-md-4 .mx-auto .my-auto}
+![](assets/images/epfl.png){width=75px .logo-img}
+:::
+
+::: {.g-col-12 .g-col-md-8}
+**PhD in Quantitative Finance**<br>
+*Swiss Finance Institute, EPFL*<br>
+2024 - Present
+:::
+
+::::
+
+:::::
+
+
+::::: {.g-col-12 .g-col-md-6}
+
+:::: {.grid}
+
+::: {.g-col-12 .g-col-md-4 .mx-auto .my-auto}
+![](assets/images/polito.png){width=75px .logo-img}
+:::
+
+::: {.g-col-12 .g-col-md-8}
+**MSc in Mathematical Engineering**<br>
+*Politecnico di Torino*<br>
+2022 - 2024
+:::
+
+::::
+
+:::::
+
+
+::::: {.g-col-12 .g-col-md-6}
+
+:::: {.grid}
+
+::: {.g-col-12 .g-col-md-4 .mx-auto .my-auto}
+![](assets/images/kth.png){width=75px .logo-img}
+:::
+
+::: {.g-col-12 .g-col-md-8}
+**Erasmus+ Exchange Program**<br>
+*KTH Royal Institute of Technology*<br>
+2023 - 2024
+:::
+
+::::
+
+:::::
+
+
+::::: {.g-col-12 .g-col-md-6}
+
+:::: {.grid}
+
+::: {.g-col-12 .g-col-md-4 .mx-auto .my-auto}
+![](assets/images/polito.png){width=75px .logo-img}
+:::
+
+::: {.g-col-12 .g-col-md-8}
+**BSc in Mathematics for Engineering**<br>
+*Politecnico di Torino*<br>
+2019 - 2022
+:::
+
+::::
+
+:::::
+
+
+
+::::::
+
+
+<br>
+
+
+## Experience
+
+:::::: {.grid}
+
+::::: {.g-col-12 .g-col-md-6}
+
+:::: {.grid}
+
+::: {.g-col-12 .g-col-md-4 .mx-auto .my-auto}
+![](assets/images/snb.svg){width=75px .logo-img}
+:::
+
+::: {.g-col-12 .g-col-md-8}
+**External Research Collaborator, Banking Operations Analysis**<br>
+*Swiss National Bank*<br>
+January 2026 - Present
+:::
+
+::::
+
+:::::
+
+::::::
+
+
+<br>
+
+
+## [Publications &rarr;](publications/index.qmd)
 
 ::: {#publications}
-
-:::
-
-
-
-## [Blog &rarr;](blog/index.qmd)
-
-::: {#blog}
 
 :::

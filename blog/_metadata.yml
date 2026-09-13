@@ -1,18 +1,18 @@
 free: true
 
-comments: 
-    utterances: 
-      repo:  Ruglio/Web
+comments:
+    utterances:
+      repo:  Ruglio/WEB_andrearuglioni
 
 toc: true
 toc-title: Contents
 
 author:
   - name: Andrea Ruglioni
-    url: https://ruglio.github.io/Web/
+    url: https://ruglio.github.io/WEB_andrearuglioni/
     orcid: 0009-0003-5208-5907
 
-title-block-banner: rgba(181, 16, 25, 0.5)
+title-block-banner: true
 
 freeze: true
 
@@ -20,4 +20,5 @@ format:
   html:
     code-fold: true
     css: ../assets/styles/style_blog.css
+    
 

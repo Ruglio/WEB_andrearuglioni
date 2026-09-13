@@ -3,11 +3,15 @@
 $body-bg:                                 #fdfdfd !default;
 $body-color:                              #313745 !default;
 $headings-color:                          $body-color !default;
+$font-family-sans-serif:                  "Newsreader", Georgia, serif !default;
+$headings-font-family:                    "Newsreader", Georgia, serif !default;
 $code-block-bg:                           darken($body-bg, 3%) !default;
 $navbar-bg:                               darken($body-bg, 3%) !default;
 $footer-bg:                               darken($body-bg, 3%) !default;
 
-$link-color:                              lighten($body-color, 30%) !default;
+$accent:                                  #1d3557 !default;
+
+$link-color:                              $accent !default;
 $link-shade-percentage:                   30% !default;
 $link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
 
@@ -32,5 +36,26 @@ $form-select-border-color:                $body-color !default;
 }
 
 .active:after {
-    background-color: #313745;
+    background-color: $accent;
+}
+
+.navbar {
+    border-bottom: 2px solid rgba($accent, 0.5);
+}
+
+h2 {
+    border-left-color: rgba($accent, 0.6);
+}
+
+.quarto-title-banner {
+    background: darken($body-bg, 3%);
+}
+
+.quarto-title-banner,
+.quarto-title-banner a,
+.quarto-title-banner h1,
+.quarto-title-banner .h1,
+.quarto-title-banner h2,
+.quarto-title-banner .h2 {
+    color: $body-color;
 }

@@ -1,0 +1,21 @@
+---
+title: "PanelGP: A Probabilistic Factor Model for Asset-Return Panels"
+date: '2026-08-01'
+author:
+- name: Andrea Ruglioni
+  orcid: 0009-0003-5208-5907
+- name: Damir Filipović
+
+categories:
+  - Panel factor models
+  - Gaussian processes
+  - Bayesian econometrics
+  - Asset returns
+
+subtitle: "Working paper, 2026"
+description: "Putting Gaussian process priors on a factor model's loading and factor maps to predict the whole cross-sectional distribution of returns, not just its mean."
+---
+
+## Abstract
+
+Most factor models are graded on how well they predict average returns, but portfolio decisions really need the whole joint distribution of the return cross-section. PanelGP puts Gaussian process priors on a characteristic-driven loading map and a context-driven factor map, and carries that uncertainty forward into a future cross-section whose covariance and higher moments come out in closed form. It recovers the true model on simulated data, and on U.S. equities it improves on IPCA in mean accuracy, ranking, and Sharpe ratio.

@@ -6,15 +6,15 @@
       version="2.0">
 <channel>
 <title>Andrea Ruglioni</title>
-<link>https://ruglio.github.io/Web/blog/</link>
-<atom:link href="https://ruglio.github.io/Web/blog/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://ruglio.github.io/WEB_andrearuglioni/blog/</link>
+<atom:link href="https://ruglio.github.io/WEB_andrearuglioni/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>Doctoral candidate in quantitative finance at Swiss Finance Institute, EPFL</description>
-<generator>quarto-1.5.47</generator>
+<generator>quarto-1.5.57</generator>
 <lastBuildDate>Tue, 09 Jul 2024 22:00:00 GMT</lastBuildDate>
 <item>
   <title>Deep kernel learning</title>
   <dc:creator>Andrea Ruglioni</dc:creator>
-  <link>https://ruglio.github.io/Web/blog/dkl/s3/</link>
+  <link>https://ruglio.github.io/WEB_andrearuglioni/blog/dkl/s3/</link>
   <description><![CDATA[ 
 
 
@@ -102,7 +102,7 @@ font-style: inherit;">import</span> mean_squared_error</span></code></pre></div>
 <div id="fig-nn" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-nn-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="nn.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Neural network architecture"><img src="https://ruglio.github.io/Web/blog/dkl/s3/nn.png" class="img-fluid figure-img"></a>
+<a href="nn.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Neural network architecture"><img src="https://ruglio.github.io/WEB_andrearuglioni/blog/dkl/s3/nn.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nn-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Neural network architecture
@@ -1169,14 +1169,14 @@ Wilson, Andrew Gordon, Zhiting Hu, Ruslan Salakhutdinov, and Eric P. Xing. 2015.
   <category>machine-learning</category>
   <category>deep-learning</category>
   <category>gaussian-processes</category>
-  <guid>https://ruglio.github.io/Web/blog/dkl/s3/</guid>
+  <guid>https://ruglio.github.io/WEB_andrearuglioni/blog/dkl/s3/</guid>
   <pubDate>Tue, 09 Jul 2024 22:00:00 GMT</pubDate>
-  <media:content url="https://ruglio.github.io/Web/blog/dkl/s3/featured.png" medium="image" type="image/png" height="108" width="144"/>
+  <media:content url="https://ruglio.github.io/WEB_andrearuglioni/blog/dkl/s3/featured.png" medium="image" type="image/png" height="108" width="144"/>
 </item>
 <item>
   <title>Multi-task Gaussian processes</title>
   <dc:creator>Andrea Ruglioni</dc:creator>
-  <link>https://ruglio.github.io/Web/blog/dkl/s2/</link>
+  <link>https://ruglio.github.io/WEB_andrearuglioni/blog/dkl/s2/</link>
   <description><![CDATA[ 
 
 
@@ -1679,7 +1679,7 @@ font-style: inherit;">True</span>)</span></code></pre></div>
 <div id="fig-multitaskgpicm" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-multitaskgpicm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-multitaskgpicm-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Predictions of the multitask GP with ICM kernel."><img src="https://ruglio.github.io/Web/blog/dkl/s2/index_files/figure-html/fig-multitaskgpicm-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="709" height="476"></a>
+<a href="index_files/figure-html/fig-multitaskgpicm-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Predictions of the multitask GP with ICM kernel."><img src="https://ruglio.github.io/WEB_andrearuglioni/blog/dkl/s2/index_files/figure-html/fig-multitaskgpicm-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="709" height="476"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multitaskgpicm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Predictions of the multitask GP with ICM kernel.
@@ -1786,7 +1786,7 @@ font-style: inherit;">'Noise covariance matrix'</span>)</span>
 <div id="fig-matrices-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-matrices-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-matrices-output-1.png" class="lightbox" data-gallery="fig-matrices" title="Figure&nbsp;2&nbsp;(a): Coregionalization matrix B and noise covariance matrix \Sigma"><img src="https://ruglio.github.io/Web/blog/dkl/s2/index_files/figure-html/fig-matrices-output-1.png" class="quarto-figure quarto-figure-center figure-img" data-ref-parent="fig-matrices" width="411" height="431"></a>
+<a href="index_files/figure-html/fig-matrices-output-1.png" class="lightbox" data-gallery="fig-matrices" title="Figure&nbsp;2&nbsp;(a): Coregionalization matrix B and noise covariance matrix \Sigma"><img src="https://ruglio.github.io/WEB_andrearuglioni/blog/dkl/s2/index_files/figure-html/fig-matrices-output-1.png" class="quarto-figure quarto-figure-center figure-img" data-ref-parent="fig-matrices" width="411" height="431"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-matrices-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a) Coregionalization matrix <img src="https://latex.codecogs.com/png.latex?B"> and noise covariance matrix <img src="https://latex.codecogs.com/png.latex?%5CSigma">
@@ -1795,12 +1795,13 @@ font-style: inherit;">'Noise covariance matrix'</span>)</span>
 </div>
 </div>
 <div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-matrices" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-matrices-2" class="quarto-float quarto-figure quarto-figure-center anchored" height="431" data-fig-align="center" width="411">
+<div id="fig-matrices-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="411" height="431">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-matrices-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-matrices-output-2.png" class="lightbox" data-gallery="fig-matrices" title="Figure&nbsp;2&nbsp;(b): "><img src="https://ruglio.github.io/Web/blog/dkl/s2/index_files/figure-html/fig-matrices-output-2.png" id="fig-matrices-2" class="quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-matrices" width="411" height="431"></a>
+<a href="index_files/figure-html/fig-matrices-output-2.png" class="lightbox" data-gallery="fig-matrices" title="Figure&nbsp;2&nbsp;(b): "><img src="https://ruglio.github.io/WEB_andrearuglioni/blog/dkl/s2/index_files/figure-html/fig-matrices-output-2.png" id="fig-matrices-2" class="quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-matrices" width="411" height="431"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-matrices-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b)
 </figcaption>
 </figure>
 </div>
@@ -2134,7 +2135,7 @@ font-style: inherit;">True</span>)</span></code></pre></div>
 <div id="fig-independentgps" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-independentgps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-independentgps-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;3: Predictions of the independent GPs."><img src="https://ruglio.github.io/Web/blog/dkl/s2/index_files/figure-html/fig-independentgps-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="709" height="476"></a>
+<a href="index_files/figure-html/fig-independentgps-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;3: Predictions of the independent GPs."><img src="https://ruglio.github.io/WEB_andrearuglioni/blog/dkl/s2/index_files/figure-html/fig-independentgps-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="709" height="476"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-independentgps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: Predictions of the independent GPs.
@@ -2250,14 +2251,14 @@ Garnett, Roman. 2023. <em><span>Bayesian Optimization</span></em>. Cambridge Uni
 </div></section></div> ]]></description>
   <category>machine-learning</category>
   <category>gaussian-processes</category>
-  <guid>https://ruglio.github.io/Web/blog/dkl/s2/</guid>
+  <guid>https://ruglio.github.io/WEB_andrearuglioni/blog/dkl/s2/</guid>
   <pubDate>Sun, 07 Jul 2024 22:00:00 GMT</pubDate>
-  <media:content url="https://ruglio.github.io/Web/blog/dkl/s2/featured.png" medium="image" type="image/png" height="107" width="144"/>
+  <media:content url="https://ruglio.github.io/WEB_andrearuglioni/blog/dkl/s2/featured.png" medium="image" type="image/png" height="107" width="144"/>
 </item>
 <item>
   <title>Introduction to Gaussian processes</title>
   <dc:creator>Andrea Ruglioni</dc:creator>
-  <link>https://ruglio.github.io/Web/blog/dkl/s1/</link>
+  <link>https://ruglio.github.io/WEB_andrearuglioni/blog/dkl/s1/</link>
   <description><![CDATA[ 
 
 
@@ -2843,7 +2844,7 @@ font-style: inherit;">'y'</span>)</span>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="index_files/figure-html/cell-2-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://ruglio.github.io/Web/blog/dkl/s1/index_files/figure-html/cell-2-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="600" height="429"></a></p>
+<p><a href="index_files/figure-html/cell-2-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://ruglio.github.io/WEB_andrearuglioni/blog/dkl/s1/index_files/figure-html/cell-2-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="600" height="429"></a></p>
 </figure>
 </div>
 </div>
@@ -2890,9 +2891,9 @@ Garnett, Roman. 2023. <em><span>Bayesian Optimization</span></em>. Cambridge Uni
 </div></section></div> ]]></description>
   <category>machine-learning</category>
   <category>gaussian-processes</category>
-  <guid>https://ruglio.github.io/Web/blog/dkl/s1/</guid>
+  <guid>https://ruglio.github.io/WEB_andrearuglioni/blog/dkl/s1/</guid>
   <pubDate>Mon, 24 Jun 2024 22:00:00 GMT</pubDate>
-  <media:content url="https://ruglio.github.io/Web/blog/dkl/s1/featured.png" medium="image" type="image/png" height="105" width="144"/>
+  <media:content url="https://ruglio.github.io/WEB_andrearuglioni/blog/dkl/s1/featured.png" medium="image" type="image/png" height="105" width="144"/>
 </item>
 </channel>
 </rss>

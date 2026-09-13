@@ -1,7 +1,7 @@
 ---
-pagetitle: "Publications" 
-listing: 
-  contents: 
+pagetitle: "Publications"
+listing:
+  contents:
     - "**/index.qmd"
     - "**/index.md"
   sort: "date desc"
@@ -9,9 +9,9 @@ listing:
   categories: false
   sort-ui: false
   filter-ui: false
-  fields: [title, author, categories, date]
+  fields: [title, author, subtitle]
   image-align: left
-  
+  template: pub-list.ejs.md
+
 title-block-banner: false
-page-layout: full
 ---

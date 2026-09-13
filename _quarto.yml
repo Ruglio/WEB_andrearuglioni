@@ -1,13 +1,18 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "*.md"
+    - "!publications/pub-list.ejs.md"
+    - "!publications/pub-list-home.ejs.md"
 
 website:
   title: "Andrea Ruglioni"
   google-analytics:
     tracking-id: "G-5C5F2JCMQ1"
   cookie-consent: true
-  site-url: https://ruglio.github.io/Web/
+  site-url: https://ruglio.github.io/WEB_andrearuglioni/
   description: "Doctoral candidate in quantitative finance at Swiss Finance Institute, EPFL"
   favicon: assets/images/logo.svg
   page-navigation: true
@@ -25,9 +30,6 @@ website:
     #     aria-label: email
     #     href: mailto:ruglioni07@gmail.com
     right:
-      - text: About
-        aria-label: "About Me"
-        href: about/index.html
       - text: Blog
         aria-label: "Blog"
         href: blog/index.html
@@ -40,7 +42,7 @@ website:
 
   page-footer:
     left: >-
-     &#169; 2024 Andrea Ruglioni
+     &#169; 2024-2026 Andrea Ruglioni
     center: |
       <a class="footer-link" href="https://github.com/Ruglio" title="github">{{< fa brands github >}}</a>
       <a class="footer-link" href="https://linkedin.com/in/andrea-ruglioni" title="LinkedIn">{{< fa brands linkedin >}}</a>
@@ -50,10 +52,10 @@ website:
       <a class="footer-link" href="blog/index.xml" title="RSS Feed">{{< fa rss >}}</a>
     right: 
       Made with [Quarto](https://quarto.org)<br>
-      [Source code on {{< fa brands github >}} GitHub](https://github.com/Ruglio/web)
+      [Source code on {{< fa brands github >}} GitHub](https://github.com/Ruglio/WEB_andrearuglioni)
 
 
-format: 
+format:
   html:
     theme:
       light: [flatly, assets/styles/theme_light.scss]
@@ -61,7 +63,11 @@ format:
     css: assets/styles/styles.css
     code-link: true
     lightbox: true
-    mainfont: "Helvetica"
+    include-in-header:
+      text: |
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
 
 page-layout: full
