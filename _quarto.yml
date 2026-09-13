@@ -63,6 +63,7 @@ format:
     css: assets/styles/styles.css
     code-link: true
     lightbox: true
+    html-math-method: plain
     include-in-header:
       text: |
         <link rel="preconnect" href="https://fonts.googleapis.com">

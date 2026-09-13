@@ -1795,7 +1795,7 @@ font-style: inherit;">'Noise covariance matrix'</span>)</span>
 </div>
 </div>
 <div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-matrices" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-matrices-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="411" height="431">
+<div id="fig-matrices-2" class="quarto-float quarto-figure quarto-figure-center anchored" height="431" width="411" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-matrices-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="index_files/figure-html/fig-matrices-output-2.png" class="lightbox" data-gallery="fig-matrices" title="Figure&nbsp;2&nbsp;(b): "><img src="https://ruglio.github.io/WEB_andrearuglioni/blog/dkl/s2/index_files/figure-html/fig-matrices-output-2.png" id="fig-matrices-2" class="quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-matrices" width="411" height="431"></a>
