@@ -412,13 +412,11 @@ def plot_kernel_and_samples(l, sigma2):
 
 app_ui = ui.page_fluid(
     ui.layout_sidebar(
-        ui.panel_sidebar(
+        ui.sidebar(
             ui.input_slider("length_scale", "Length Scale (l):", min=0.1, max=5.0, value=1.0, step=0.1),
             ui.input_slider("variance", "Variance (σ²):", min=0.1, max=5.0, value=1.0, step=0.1)
         ),
-        ui.panel_main(
-            ui.output_plot("kernelPlot")
-        )
+        ui.output_plot("kernelPlot")
     )
 )
 
@@ -492,14 +490,12 @@ def plot_kernel_and_samples(l, sigma2, nu):
 
 app_ui = ui.page_fluid(
     ui.layout_sidebar(
-        ui.panel_sidebar(
+        ui.sidebar(
             ui.input_slider("length_scale", "Length Scale (l):", min=0.1, max=5.0, value=1.0, step=0.1),
             ui.input_slider("variance", "Variance (σ²):", min=0.1, max=5.0, value=1.0, step=0.1),
             ui.input_slider("smoothness_param", "Smoothness param (v):", min=1.5, max=5.0, value=1.5, step=0.5)
         ),
-        ui.panel_main(
-            ui.output_plot("kernelPlot")
-        )
+        ui.output_plot("kernelPlot")
     )
 )
 
@@ -613,12 +609,10 @@ def plot_kernels_and_samples(noise_level):
 
 app_ui = ui.page_fluid(
     ui.layout_sidebar(
-        ui.panel_sidebar(
+        ui.sidebar(
             ui.input_slider("noise_level", "Noise Level (σ²ₙ):", min=0.0, max=1.0, value=0.0, step=0.01)
         ),
-        ui.panel_main(
-            ui.output_plot("kernelPlot")
-        )
+        ui.output_plot("kernelPlot")
     )
 )
 
@@ -635,7 +629,7 @@ app = App(app_ui, server)</code></pre>
 <section id="code" class="level2">
 <h2 class="anchored" data-anchor-id="code">Code</h2>
 <p>In this section, we’ll provide a brief overview of how to implement Gaussian processes in Python using the <code>GPyTorch</code> library. The code snippet below demonstrates how to define a GP model with a squared exponential kernel and train it on synthetic data.</p>
-<div id="6de4fdd7" class="cell" data-execution_count="1">
+<div id="ad8b5202" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -713,7 +707,7 @@ app = App(app_ui, server)</code></pre>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="index_files/figure-html/cell-2-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="index_files/figure-html/cell-2-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="600" height="429"></a></p>
+<p><a href="index_files/figure-html/cell-2-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="index_files/figure-html/cell-2-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
 </figure>
 </div>
 </div>
@@ -1341,7 +1335,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"descPosition":"bottom","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

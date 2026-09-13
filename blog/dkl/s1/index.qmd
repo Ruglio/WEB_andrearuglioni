@@ -162,13 +162,11 @@ def plot_kernel_and_samples(l, sigma2):
 
 app_ui = ui.page_fluid(
     ui.layout_sidebar(
-        ui.panel_sidebar(
+        ui.sidebar(
             ui.input_slider("length_scale", "Length Scale (l):", min=0.1, max=5.0, value=1.0, step=0.1),
             ui.input_slider("variance", "Variance (σ²):", min=0.1, max=5.0, value=1.0, step=0.1)
         ),
-        ui.panel_main(
-            ui.output_plot("kernelPlot")
-        )
+        ui.output_plot("kernelPlot")
     )
 )
 
@@ -249,14 +247,12 @@ def plot_kernel_and_samples(l, sigma2, nu):
 
 app_ui = ui.page_fluid(
     ui.layout_sidebar(
-        ui.panel_sidebar(
+        ui.sidebar(
             ui.input_slider("length_scale", "Length Scale (l):", min=0.1, max=5.0, value=1.0, step=0.1),
             ui.input_slider("variance", "Variance (σ²):", min=0.1, max=5.0, value=1.0, step=0.1),
             ui.input_slider("smoothness_param", "Smoothness param (v):", min=1.5, max=5.0, value=1.5, step=0.5)
         ),
-        ui.panel_main(
-            ui.output_plot("kernelPlot")
-        )
+        ui.output_plot("kernelPlot")
     )
 )
 
@@ -385,12 +381,10 @@ def plot_kernels_and_samples(noise_level):
 
 app_ui = ui.page_fluid(
     ui.layout_sidebar(
-        ui.panel_sidebar(
+        ui.sidebar(
             ui.input_slider("noise_level", "Noise Level (σ²ₙ):", min=0.0, max=1.0, value=0.0, step=0.01)
         ),
-        ui.panel_main(
-            ui.output_plot("kernelPlot")
-        )
+        ui.output_plot("kernelPlot")
     )
 )
 
