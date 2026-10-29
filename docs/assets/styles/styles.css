@@ -51,11 +51,16 @@ a:hover {
     max-height: 26px;
 }
 
-/* Dark mode swaps in the light-on-dark logo (Quarto sets body.quarto-dark).
-   Drawn on the same <img> box, so both modes are exactly the same size. */
-body.quarto-dark img.navbar-logo {
+/* The logo is drawn as a background on the <img> box in both modes (the src is
+   pushed out of view), so light and dark render identically and only the file
+   changes. Quarto sets body.quarto-dark in dark mode. */
+img.navbar-logo {
     object-position: -9999px 0;
-    background: url("../images/logo-dark.svg") no-repeat center / contain;
+    background: url("../images/logo.svg") no-repeat center / contain;
+}
+
+body.quarto-dark img.navbar-logo {
+    background-image: url("../images/logo-dark.svg");
 }
 
 .navbar-title {
