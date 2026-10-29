@@ -8,7 +8,7 @@
 
 <meta name="author" content="Andrea Ruglioni">
 <meta name="author" content="Aurel Ruben Mäder">
-<meta name="author" content="Damir Filipović">
+<meta name="author" content="Damir Filipovic">
 <meta name="description" content="A monitoring signal for unusually low incoming payments, and a way to split the blame for a shortfall across counterparties that adds up exactly.">
 
 <title>Flagging Low Incoming Liquidity, and Explaining Why – Andrea Ruglioni</title>
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<link href="../../assets/images/logo.svg" rel="icon" type="image/svg+xml">
+<link href="../../assets/images/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
@@ -45,10 +45,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/academicons-1.9.2/all.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/academicons-1.9.2/size.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -93,7 +89,7 @@ cookieconsent.run({
   
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&amp;family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../assets/styles/styles.css">
@@ -143,7 +139,7 @@ cookieconsent.run({
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Flagging Low Incoming Liquidity, and Explaining Why</h1>
-            <p class="subtitle lead">Working paper, 2026 – with the Swiss National Bank</p>
+            <p class="subtitle lead">Working paper – with the Swiss National Bank</p>
                   <div>
         <div class="description">
           A monitoring signal for unusually low incoming payments, and a way to split the blame for a shortfall across counterparties that adds up exactly.
@@ -165,7 +161,7 @@ cookieconsent.run({
       <div class="quarto-title-meta-contents">
                <p>Andrea Ruglioni <a href="https://orcid.org/0009-0003-5208-5907" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
                <p>Aurel Ruben Mäder </p>
-               <p>Damir Filipović </p>
+               <p>Damir Filipovic </p>
             </div>
     </div>
       
@@ -767,13 +763,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2024-2026 Andrea Ruglioni</p>
+<p>© 2024–2026 Andrea Ruglioni</p>
 </div>   
     <div class="nav-footer-center">
-<p><a class="footer-link" href="https://github.com/Ruglio" title="github"><i class="fa-brands fa-github" aria-label="github"></i></a> <a class="footer-link" href="https://linkedin.com/in/andrea-ruglioni" title="LinkedIn"><i class="fa-brands fa-linkedin" aria-label="linkedin"></i></a> <a class="footer-link" href="https://orcid.org/0009-0003-5208-5907" title="orcid"><i class="ai  ai-orcid"></i></a> <a class="footer-link" href="https://scholar.google.com/citations?user=3sdazUQAAAAJ&amp;hl=en" title="Google Scholar"><i class="ai  ai-google-scholar"></i></a> <a class="footer-link" href="mailto:andrea.ruglioni@epfl.ch" title="envelope"><i class="fa-solid fa-envelope" aria-label="envelope"></i></a> <a class="footer-link" href="blog/index.xml" title="RSS Feed"><i class="fa-solid fa-rss" aria-label="rss"></i></a></p>
+<p><a class="footer-link" href="https://github.com/Ruglio">GitHub</a> <a class="footer-link" href="https://linkedin.com/in/andrea-ruglioni">LinkedIn</a> <a class="footer-link" href="https://orcid.org/0009-0003-5208-5907">ORCID</a> <a class="footer-link" href="https://scholar.google.com/citations?user=3sdazUQAAAAJ&amp;hl=en">Scholar</a> <a class="footer-link" href="mailto:andrea.ruglioni@epfl.ch">Email</a> <a class="footer-link" href="blog/index.xml">RSS</a></p>
 <div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
-<p>Made with <a href="https://quarto.org">Quarto</a><br> <a href="https://github.com/Ruglio/WEB_andrearuglioni">Source code on <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
+<p>Made with <a href="https://quarto.org">Quarto</a> · <a href="https://github.com/Ruglio/WEB_andrearuglioni">Source</a></p>
 </div>
   </div>
 </footer>

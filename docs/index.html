@@ -26,7 +26,7 @@ ul.task-list li input[type="checkbox"] {
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
-<link href="./assets/images/logo.svg" rel="icon" type="image/svg+xml">
+<link href="./assets/images/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-listing/list.min.js"></script>
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/cookie-consent/cookie-consent.js"></script>
@@ -35,6 +35,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
@@ -42,13 +43,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/academicons-1.9.2/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/academicons-1.9.2/size.css" rel="stylesheet">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -74,9 +68,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-subtitle','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
       
-      searchColumns: ["listing-project","listing-website","listing-format","listing-page-layout","listing-execute","listing-language","listing-date-format","listing-title-block-banner","listing-title","listing-date","listing-author","listing-categories","listing-subtitle","listing-description","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+      searchColumns: ["listing-project","listing-website","listing-format","listing-page-layout","listing-execute","listing-language","listing-date-format","listing-title-block-banner","listing-title","listing-date","listing-author","listing-categories","listing-description","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count","listing-subtitle"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -122,11 +116,10 @@ cookieconsent.run({
   
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&amp;family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
 
 
 <link rel="stylesheet" href="assets/styles/styles.css">
-<link rel="stylesheet" href="assets/styles/style_personalized.css">
 </head>
 
 <body class="nav-fixed">
@@ -179,132 +172,85 @@ cookieconsent.run({
 
 
 
-<div class="quarto-about-trestles column-page">
-  <div class="about-entity">
-    <img src="assets/images/profile.jpg" alt="Andrea Ruglioni" class="about-image
-  rounded " style="width: 20em;">
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Andrea Ruglioni</h1>
-<p class="subtitle lead">Doctoral candidate in quantitative finance<br>Swiss Finance Institute, EPFL</p>
-</div>
-<div class="quarto-title-meta column-page">
-  </div>
-</header>
-    <div class="about-links">
-  <a href="https://github.com/Ruglio" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text"></span>
-  </a>
-  <a href="https://linkedin.com/in/andrea-ruglioni" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text"></span>
-  </a>
-  <a href="https://orcid.org/0009-0003-5208-5907" class="about-link" rel="" target="">
-     <span class="about-link-text"><i class="ai  ai-orcid"></i></span>
-  </a>
-  <a href="https://scholar.google.com/citations?user=3sdazUQAAAAJ&amp;hl=en" class="about-link" rel="" target="">
-     <span class="about-link-text"><i class="ai  ai-google-scholar"></i></span>
-  </a>
-  <a href="mailto:andrea.ruglioni@epfl.ch" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text"></span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><div id="hero-heading">
-<p>I’m a PhD student in Quantitative Finance at the Swiss Finance Institute, EPFL. My research sits between ML, optimization, and finance – I enjoy both building new methods and digging into empirical questions in these areas.</p>
-<p>Get in touch by <a href="mailto:andrea.ruglioni@epfl.ch">sending me an email</a> <i class="fa-solid fa-feather-pointed" aria-label="feather-pointed"></i></p>
-</div></div>
-</div>
-
-<p><br></p>
-<section id="education" class="level2">
-<h2 data-anchor-id="education">Education</h2>
-<div class="grid">
-<div class="g-col-12 g-col-md-6">
-<div class="grid">
-<div class="g-col-12 g-col-md-4 mx-auto my-auto">
-<p><a href="assets/images/epfl.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="assets/images/epfl.png" class="logo-img img-fluid" width="75"></a></p>
-</div>
-<div class="g-col-12 g-col-md-8">
-<p><strong>PhD in Quantitative Finance</strong><br> <em>Swiss Finance Institute, EPFL</em><br> 2024 - Present</p>
+<div class="sw-hero">
+<h1 class="sw-name">
+Andrea<br>Ruglioni<span class="sw-square" aria-hidden="true"></span>
+</h1>
+<div class="sw-portrait">
+<p><img src="assets/images/profile.jpg" class="nolightbox img-fluid" alt="Andrea Ruglioni"></p>
 </div>
 </div>
+<div class="sw-intro">
+<div class="sw-role">
+<p>Doctoral candidate in quantitative finance<br> EPFL</p>
 </div>
-<div class="g-col-12 g-col-md-6">
-<div class="grid">
-<div class="g-col-12 g-col-md-4 mx-auto my-auto">
-<p><a href="assets/images/polito.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="assets/images/polito.png" class="logo-img img-fluid" width="75"></a></p>
-</div>
-<div class="g-col-12 g-col-md-8">
-<p><strong>MSc in Mathematical Engineering</strong><br> <em>Politecnico di Torino</em><br> 2022 - 2024</p>
-</div>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="grid">
-<div class="g-col-12 g-col-md-4 mx-auto my-auto">
-<p><a href="assets/images/kth.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="assets/images/kth.png" class="logo-img img-fluid" width="75"></a></p>
-</div>
-<div class="g-col-12 g-col-md-8">
-<p><strong>Erasmus+ Exchange Program</strong><br> <em>KTH Royal Institute of Technology</em><br> 2023 - 2024</p>
+<div class="sw-lede">
+<p>I’m a PhD student in Quantitative Finance at EPFL. My research sits between ML, optimization, and finance – I enjoy both building new methods and digging into empirical questions in these areas.</p>
+<p>Get in touch by <a href="mailto:andrea.ruglioni@epfl.ch">sending me an email</a>.</p>
+<p><span class="sw-link"><a href="https://github.com/Ruglio">GitHub</a></span> <span class="sw-link"><a href="https://linkedin.com/in/andrea-ruglioni">LinkedIn</a></span> <span class="sw-link"><a href="https://orcid.org/0009-0003-5208-5907">ORCID</a></span> <span class="sw-link"><a href="https://scholar.google.com/citations?user=3sdazUQAAAAJ&amp;hl=en">Google Scholar</a></span> <span class="sw-link"><a href="mailto:andrea.ruglioni@epfl.ch">Email</a></span></p>
 </div>
 </div>
+<section id="education" class="level2 unnumbered unlisted sw-section">
+<h2 class="unnumbered unlisted anchored" data-anchor-id="education">Education</h2>
+<div class="sw-rows">
+<div class="sw-row">
+<p><span class="sw-when">2024 – Present</span> <span class="sw-what"><strong>PhD in Quantitative Finance</strong><br>EPFL</span> <span class="sw-logo"><img src="assets/images/epfl.png" class="nolightbox" height="26" alt="EPFL"></span></p>
 </div>
-<div class="g-col-12 g-col-md-6">
-<div class="grid">
-<div class="g-col-12 g-col-md-4 mx-auto my-auto">
-<p><a href="assets/images/polito.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="assets/images/polito.png" class="logo-img img-fluid" width="75"></a></p>
+<div class="sw-row">
+<p><span class="sw-when">2022 – 2024</span> <span class="sw-what"><strong>MSc in Mathematical Engineering</strong><br>Politecnico di Torino</span> <span class="sw-logo"><img src="assets/images/polito.svg" class="nolightbox img-fluid" alt="Politecnico di Torino"></span></p>
 </div>
-<div class="g-col-12 g-col-md-8">
-<p><strong>BSc in Mathematics for Engineering</strong><br> <em>Politecnico di Torino</em><br> 2019 - 2022</p>
+<div class="sw-row">
+<p><span class="sw-when">2023 – 2024</span> <span class="sw-what"><strong>Erasmus+ Exchange Program</strong><br>KTH Royal Institute of Technology</span> <span class="sw-logo"><img src="assets/images/kth.svg" class="nolightbox img-fluid" alt="KTH"></span></p>
+</div>
+<div class="sw-row">
+<p><span class="sw-when">2019 – 2022</span> <span class="sw-what"><strong>BSc in Mathematics for Engineering</strong><br>Politecnico di Torino</span> <span class="sw-logo"><img src="assets/images/polito.svg" class="nolightbox img-fluid" alt="Politecnico di Torino"></span></p>
 </div>
 </div>
-</div>
-</div>
-<p><br></p>
 </section>
-<section id="experience" class="level2">
-<h2 data-anchor-id="experience">Experience</h2>
-<div class="grid">
-<div class="g-col-12 g-col-md-6">
-<div class="grid">
-<div class="g-col-12 g-col-md-4 mx-auto my-auto">
-<p><a href="assets/images/snb.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="assets/images/snb.svg" class="logo-img img-fluid" width="75"></a></p>
-</div>
-<div class="g-col-12 g-col-md-8">
-<p><strong>External Research Collaborator, Banking Operations Analysis</strong><br> <em>Swiss National Bank</em><br> January 2026 - Present</p>
+<section id="experience" class="level2 unnumbered unlisted sw-section">
+<h2 class="unnumbered unlisted anchored" data-anchor-id="experience">Experience</h2>
+<div class="sw-rows">
+<div class="sw-row">
+<p><span class="sw-when">Jan 2026 – Present</span> <span class="sw-what"><strong>External Research Collaborator, Banking Operations Analysis</strong><br>Swiss National Bank</span> <span class="sw-logo"><img src="assets/images/snb.svg" class="nolightbox img-fluid" alt="Swiss National Bank"></span></p>
 </div>
 </div>
-</div>
-</div>
-<p><br></p>
 </section>
-<section id="publications" class="level2">
-<h2 data-anchor-id="publications"><a href="./publications/index.html">Publications →</a></h2>
+<section id="publications" class="level2 unnumbered unlisted sw-section">
+<h2 class="unnumbered unlisted anchored" data-anchor-id="publications">Publications</h2>
 <div id="listing-publications" class="quarto-listing quarto-listing-container-custom">
 <div class="pub-list">
 
+  
   <div class="pub-item">
-    <div class="pub-title"><a href="publications/panelgp/index.html">PanelGP: A Probabilistic Factor Model for Asset-Return Panels</a></div>
-    <div class="pub-authors">Andrea Ruglioni, Damir Filipović</div>
-    <div class="pub-venue">Working paper, 2026</div>
-    
+    <div class="pub-year">2026</div>
+    <div class="pub-body">
+      <div class="pub-title"><a href="publications/panelgp/index.html">PanelGP: A Probabilistic Factor Model for Asset-Return Panels</a></div>
+      <div class="pub-authors">Andrea Ruglioni, Damir Filipovic</div>
+      <div class="pub-venue">Working paper</div>
+      
+    </div>
   </div>
 
+  
   <div class="pub-item">
-    <div class="pub-title"><a href="publications/liquidity-monitoring/index.html">Flagging Low Incoming Liquidity, and Explaining Why</a></div>
-    <div class="pub-authors">Andrea Ruglioni, Aurel Ruben Mäder, Damir Filipović</div>
-    <div class="pub-venue">Working paper, 2026 -- with the Swiss National Bank</div>
-    
+    <div class="pub-year">2026</div>
+    <div class="pub-body">
+      <div class="pub-title"><a href="publications/liquidity-monitoring/index.html">Flagging Low Incoming Liquidity, and Explaining Why</a></div>
+      <div class="pub-authors">Andrea Ruglioni, Aurel Ruben Mäder, Damir Filipovic</div>
+      <div class="pub-venue">Working paper – with the Swiss National Bank</div>
+      
+    </div>
   </div>
 
+  
   <div class="pub-item">
-    <div class="pub-title"><a href="publications/WEC/index.html">Optimizing wave energy converters: A co-design approach using surrogate modeling</a></div>
-    <div class="pub-authors">Andrea Ruglioni, Edoardo Pasta, Nicolàs Faedo, Paolo Brandimarte</div>
-    <div class="pub-venue">2024</div>
-    
+    <div class="pub-year">2024</div>
+    <div class="pub-body">
+      <div class="pub-title"><a href="publications/WEC/index.html">Optimizing wave energy converters: A co-design approach using surrogate modeling</a></div>
+      <div class="pub-authors">Andrea Ruglioni, Edoardo Pasta, Nicolàs Faedo, Paolo Brandimarte</div>
+      
+      
+    </div>
   </div>
 
 </div>
@@ -312,11 +258,11 @@ cookieconsent.run({
 No matching items
 </div>
 </div>
-
-
-
-
+<p><a href="./publications/index.html" class="sw-more">All publications →</a></p>
 </section>
+
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -483,6 +429,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   } else {
     toggleColorMode(false);
   }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
@@ -880,48 +833,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2024-2026 Andrea Ruglioni</p>
+<p>© 2024–2026 Andrea Ruglioni</p>
 </div>   
     <div class="nav-footer-center">
-<p><a class="footer-link" href="https://github.com/Ruglio" title="github"><i class="fa-brands fa-github" aria-label="github"></i></a> <a class="footer-link" href="https://linkedin.com/in/andrea-ruglioni" title="LinkedIn"><i class="fa-brands fa-linkedin" aria-label="linkedin"></i></a> <a class="footer-link" href="https://orcid.org/0009-0003-5208-5907" title="orcid"><i class="ai  ai-orcid"></i></a> <a class="footer-link" href="https://scholar.google.com/citations?user=3sdazUQAAAAJ&amp;hl=en" title="Google Scholar"><i class="ai  ai-google-scholar"></i></a> <a class="footer-link" href="mailto:andrea.ruglioni@epfl.ch" title="envelope"><i class="fa-solid fa-envelope" aria-label="envelope"></i></a> <a class="footer-link" href="blog/index.xml" title="RSS Feed"><i class="fa-solid fa-rss" aria-label="rss"></i></a></p>
+<p><a class="footer-link" href="https://github.com/Ruglio">GitHub</a> <a class="footer-link" href="https://linkedin.com/in/andrea-ruglioni">LinkedIn</a> <a class="footer-link" href="https://orcid.org/0009-0003-5208-5907">ORCID</a> <a class="footer-link" href="https://scholar.google.com/citations?user=3sdazUQAAAAJ&amp;hl=en">Scholar</a> <a class="footer-link" href="mailto:andrea.ruglioni@epfl.ch">Email</a> <a class="footer-link" href="blog/index.xml">RSS</a></p>
 <div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
-<p>Made with <a href="https://quarto.org">Quarto</a><br> <a href="https://github.com/Ruglio/WEB_andrearuglioni">Source code on <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
+<p>Made with <a href="https://quarto.org">Quarto</a> · <a href="https://github.com/Ruglio/WEB_andrearuglioni">Source</a></p>
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"descPosition":"bottom","openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

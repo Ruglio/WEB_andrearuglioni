@@ -86,42 +86,35 @@
   {
     "objectID": "publications/index.html",
     "href": "publications/index.html",
-    "title": "Andrea Ruglioni",
+    "title": "Publications",
     "section": "",
-    "text": "PanelGP: A Probabilistic Factor Model for Asset-Return Panels\n    Andrea Ruglioni, Damir Filipović\n    Working paper, 2026\n    \n  \n\n  \n  \n    Flagging Low Incoming Liquidity, and Explaining Why\n    Andrea Ruglioni, Aurel Ruben Mäder, Damir Filipović\n    Working paper, 2026 -- with the Swiss National Bank\n    \n  \n\n  \n  \n    Optimizing wave energy converters: A co-design approach using surrogate modeling\n    Andrea Ruglioni, Edoardo Pasta, Nicolàs Faedo, Paolo Brandimarte\n    2024\n    \n  \n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Andrea Ruglioni",
-    "section": "",
-    "text": "I’m a PhD student in Quantitative Finance at the Swiss Finance Institute, EPFL. My research sits between ML, optimization, and finance – I enjoy both building new methods and digging into empirical questions in these areas.\nGet in touch by sending me an email"
+    "text": "2026\n    \n      PanelGP: A Probabilistic Factor Model for Asset-Return Panels\n      Andrea Ruglioni, Damir Filipovic\n      Working paper\n      \n    \n  \n\n  \n  \n  \n    2026\n    \n      Flagging Low Incoming Liquidity, and Explaining Why\n      Andrea Ruglioni, Aurel Ruben Mäder, Damir Filipovic\n      Working paper – with the Swiss National Bank\n      \n    \n  \n\n  \n  \n  \n    2024\n    \n      Optimizing wave energy converters: A co-design approach using surrogate modeling\n      Andrea Ruglioni, Edoardo Pasta, Nicolàs Faedo, Paolo Brandimarte\n      \n      \n    \n  \n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#education",
     "href": "index.html#education",
-    "title": "Andrea Ruglioni",
+    "title": "\nAndreaRuglioni\n",
     "section": "Education",
-    "text": "Education\n\n\n\n\n\n\n\nPhD in Quantitative Finance Swiss Finance Institute, EPFL 2024 - Present\n\n\n\n\n\n\n\n\n\nMSc in Mathematical Engineering Politecnico di Torino 2022 - 2024\n\n\n\n\n\n\n\n\n\nErasmus+ Exchange Program KTH Royal Institute of Technology 2023 - 2024\n\n\n\n\n\n\n\n\n\nBSc in Mathematics for Engineering Politecnico di Torino 2019 - 2022"
+    "text": "Education\n\n\n2024 – Present PhD in Quantitative FinanceEPFL \n\n\n2022 – 2024 MSc in Mathematical EngineeringPolitecnico di Torino \n\n\n2023 – 2024 Erasmus+ Exchange ProgramKTH Royal Institute of Technology \n\n\n2019 – 2022 BSc in Mathematics for EngineeringPolitecnico di Torino"
   },
   {
     "objectID": "index.html#experience",
     "href": "index.html#experience",
-    "title": "Andrea Ruglioni",
+    "title": "\nAndreaRuglioni\n",
     "section": "Experience",
-    "text": "Experience\n\n\n\n\n\n\n\nExternal Research Collaborator, Banking Operations Analysis Swiss National Bank January 2026 - Present"
+    "text": "Experience\n\n\nJan 2026 – Present External Research Collaborator, Banking Operations AnalysisSwiss National Bank"
   },
   {
     "objectID": "index.html#publications",
     "href": "index.html#publications",
-    "title": "Andrea Ruglioni",
-    "section": "Publications →",
-    "text": "Publications →\n\n\n\n  \n    PanelGP: A Probabilistic Factor Model for Asset-Return Panels\n    Andrea Ruglioni, Damir Filipović\n    Working paper, 2026\n    \n  \n\n  \n    Flagging Low Incoming Liquidity, and Explaining Why\n    Andrea Ruglioni, Aurel Ruben Mäder, Damir Filipović\n    Working paper, 2026 -- with the Swiss National Bank\n    \n  \n\n  \n    Optimizing wave energy converters: A co-design approach using surrogate modeling\n    Andrea Ruglioni, Edoardo Pasta, Nicolàs Faedo, Paolo Brandimarte\n    2024\n    \n  \n\n\n\nNo matching items"
+    "title": "\nAndreaRuglioni\n",
+    "section": "Publications",
+    "text": "Publications\n\n\n\n  \n  \n    2026\n    \n      PanelGP: A Probabilistic Factor Model for Asset-Return Panels\n      Andrea Ruglioni, Damir Filipovic\n      Working paper\n      \n    \n  \n\n  \n  \n    2026\n    \n      Flagging Low Incoming Liquidity, and Explaining Why\n      Andrea Ruglioni, Aurel Ruben Mäder, Damir Filipovic\n      Working paper – with the Swiss National Bank\n      \n    \n  \n\n  \n  \n    2024\n    \n      Optimizing wave energy converters: A co-design approach using surrogate modeling\n      Andrea Ruglioni, Edoardo Pasta, Nicolàs Faedo, Paolo Brandimarte\n      \n      \n    \n  \n\n\n\nNo matching items\n\n\nAll publications →"
   },
   {
     "objectID": "blog/index.html",
     "href": "blog/index.html",
-    "title": "Andrea Ruglioni",
+    "title": "Blog",
     "section": "",
     "text": "Deep kernel learning\n\n\n\n\n\nDeep Kernel Learning (DKL) combines deep neural networks with Gaussian Processes to model complex data patterns. In this post, we explore DKL and implement a DKL model using the GPyTorch library in Python.\n\n\n\n\n\nJul 10, 2024\n\n\n10 min\n\n\n\n\n\n\n\n\n\n\n\n\nMulti-task Gaussian processes\n\n\n\n\n\nLearn how to model multiple correlated outputs using the intrinsic model of coregionalization (ICM) and the linear model of coregionalization (LMC).\n\n\n\n\n\nJul 8, 2024\n\n\n11 min\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Gaussian processes\n\n\n\n\n\nAn introduction to Gaussian Processes, discussing their mathematical foundations and practical applications in regression tasks.\n\n\n\n\n\nJun 25, 2024\n\n\n17 min\n\n\n\n\n\n\nNo matching items"
   },
@@ -156,16 +149,16 @@
   {
     "objectID": "teaching/index.html",
     "href": "teaching/index.html",
-    "title": "Andrea Ruglioni",
+    "title": "Teaching",
     "section": "",
-    "text": "EPFL Fall 2024 – Present, TA as PhD student\nThis course gives an introduction to probability theory and stochastic calculus in discrete and continuous time. The fundamental notions and techniques introduced in this course have many applications in finance, for example for option pricing, risk management and optimal portfolio choice.\n\n\n\nEPFL Fall 2024 – Present, TA as PhD student\nHow to measure and manage financial risk in practice: statistical models for risk factors, copula-based dependence structures, and credit risk. A fair share of the exercises are about actually implementing volatility and credit risk models, not just deriving them on paper.\n\n\n\nEPFL Spring 2025, TA as PhD student\nA broad course on investment analysis – portfolio choice, asset pricing, market efficiency, behavioral finance – with trading strategies and dynamic asset allocation woven in throughout.\n\n\n\nEPFL Spring 2025, TA as PhD student\nMachine learning for business problems: supervised and unsupervised methods, deep learning, time series, and a bit of risk management and portfolio optimization along the way.\n\n\n\nKTH Royal Institute of Technology Fall 2023, TA as graduate student\nBuilt around three areas: queueing theory and queueing networks, inventory optimization (deterministic and stochastic), and scheduling and routing for production and transport systems."
+    "text": "Fall 2024 – Present\n\nProbability and Stochastic Calculus\nEPFL · TA as PhD student\nThis course gives an introduction to probability theory and stochastic calculus in discrete and continuous time. The fundamental notions and techniques introduced in this course have many applications in finance, for example for option pricing, risk management and optimal portfolio choice.\n\n\n\nFall 2024 – Present\n\nQuantitative Financial Risk Management\nEPFL · TA as PhD student\nHow to measure and manage financial risk in practice: statistical models for risk factors, copula-based dependence structures, and credit risk. A fair share of the exercises are about actually implementing volatility and credit risk models, not just deriving them on paper.\n\n\n\nSpring 2025\n\nInvestments\nEPFL · TA as PhD student\nA broad course on investment analysis – portfolio choice, asset pricing, market efficiency, behavioral finance – with trading strategies and dynamic asset allocation woven in throughout.\n\n\n\nSpring 2025\n\nIntroduction to Data-Driven Business Analytics\nEPFL · TA as PhD student\nMachine learning for business problems: supervised and unsupervised methods, deep learning, time series, and a bit of risk management and portfolio optimization along the way.\n\n\n\nFall 2023\n\nApplied Systems Engineering\nKTH Royal Institute of Technology · TA as graduate student\nBuilt around three areas: queueing theory and queueing networks, inventory optimization (deterministic and stochastic), and scheduling and routing for production and transport systems."
   },
   {
     "objectID": "teaching/index.html#courses",
     "href": "teaching/index.html#courses",
-    "title": "Andrea Ruglioni",
+    "title": "Teaching",
     "section": "",
-    "text": "EPFL Fall 2024 – Present, TA as PhD student\nThis course gives an introduction to probability theory and stochastic calculus in discrete and continuous time. The fundamental notions and techniques introduced in this course have many applications in finance, for example for option pricing, risk management and optimal portfolio choice.\n\n\n\nEPFL Fall 2024 – Present, TA as PhD student\nHow to measure and manage financial risk in practice: statistical models for risk factors, copula-based dependence structures, and credit risk. A fair share of the exercises are about actually implementing volatility and credit risk models, not just deriving them on paper.\n\n\n\nEPFL Spring 2025, TA as PhD student\nA broad course on investment analysis – portfolio choice, asset pricing, market efficiency, behavioral finance – with trading strategies and dynamic asset allocation woven in throughout.\n\n\n\nEPFL Spring 2025, TA as PhD student\nMachine learning for business problems: supervised and unsupervised methods, deep learning, time series, and a bit of risk management and portfolio optimization along the way.\n\n\n\nKTH Royal Institute of Technology Fall 2023, TA as graduate student\nBuilt around three areas: queueing theory and queueing networks, inventory optimization (deterministic and stochastic), and scheduling and routing for production and transport systems."
+    "text": "Fall 2024 – Present\n\nProbability and Stochastic Calculus\nEPFL · TA as PhD student\nThis course gives an introduction to probability theory and stochastic calculus in discrete and continuous time. The fundamental notions and techniques introduced in this course have many applications in finance, for example for option pricing, risk management and optimal portfolio choice.\n\n\n\nFall 2024 – Present\n\nQuantitative Financial Risk Management\nEPFL · TA as PhD student\nHow to measure and manage financial risk in practice: statistical models for risk factors, copula-based dependence structures, and credit risk. A fair share of the exercises are about actually implementing volatility and credit risk models, not just deriving them on paper.\n\n\n\nSpring 2025\n\nInvestments\nEPFL · TA as PhD student\nA broad course on investment analysis – portfolio choice, asset pricing, market efficiency, behavioral finance – with trading strategies and dynamic asset allocation woven in throughout.\n\n\n\nSpring 2025\n\nIntroduction to Data-Driven Business Analytics\nEPFL · TA as PhD student\nMachine learning for business problems: supervised and unsupervised methods, deep learning, time series, and a bit of risk management and portfolio optimization along the way.\n\n\n\nFall 2023\n\nApplied Systems Engineering\nKTH Royal Institute of Technology · TA as graduate student\nBuilt around three areas: queueing theory and queueing networks, inventory optimization (deterministic and stochastic), and scheduling and routing for production and transport systems."
   },
   {
     "objectID": "blog/dkl/s3/index.html",

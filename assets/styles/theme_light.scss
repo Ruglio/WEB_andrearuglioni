@@ -1,61 +1,55 @@
 /*-- scss:defaults --*/
 
-$body-bg:                                 #fdfdfd !default;
-$body-color:                              #313745 !default;
-$headings-color:                          $body-color !default;
-$font-family-sans-serif:                  "Newsreader", Georgia, serif !default;
-$headings-font-family:                    "Newsreader", Georgia, serif !default;
-$code-block-bg:                           darken($body-bg, 3%) !default;
-$navbar-bg:                               darken($body-bg, 3%) !default;
-$footer-bg:                               darken($body-bg, 3%) !default;
+// Swiss palette: paper, ink, one red.
+$sw-paper:                                #ffffff;
+$sw-ink:                                  #111111;
+$sw-muted:                                #6e6e6e;
+$sw-hairline:                             #d8d8d8;
+$sw-surface:                              #f3f3f1;
+$sw-red:                                  #e30613;
 
-$accent:                                  #1d3557 !default;
+$body-bg:                                 $sw-paper !default;
+$body-color:                              $sw-ink !default;
+$headings-color:                          $sw-ink !default;
+$text-muted:                              $sw-muted !default;
+$border-color:                            $sw-hairline !default;
+$primary:                                 $sw-ink !default;
 
-$link-color:                              $accent !default;
-$link-shade-percentage:                   30% !default;
-$link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
+$font-family-sans-serif:                  "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$headings-font-family:                    "Inter Tight", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$headings-font-weight:                    700 !default;
 
-$code-color:                              lighten($body-color, 10%) !default;
-$code-bg:                                 darken($body-bg, 10%) !default;
+$link-color:                              $sw-ink !default;
+$link-hover-color:                        $sw-red !default;
 
-$card-border-color:                       $body-color !default;
-$form-select-border-color:                $body-color !default;
+$navbar-bg:                               $sw-paper !default;
+$navbar-fg:                               $sw-ink !default;
+$navbar-hl:                               $sw-red !default;
+$footer-bg:                               $sw-paper !default;
+$footer-fg:                               $sw-muted !default;
+
+$code-block-bg:                           $sw-surface !default;
+$code-color:                              $sw-ink !default;
+$code-bg:                                 $sw-surface !default;
+
+$enable-rounded:                          false !default;
+$border-radius:                           0 !default;
+$border-radius-sm:                        0 !default;
+$border-radius-lg:                        0 !default;
+
+$card-border-color:                       $sw-ink !default;
+$form-select-border-color:                $sw-ink !default;
 
 /*-- scss:rules --*/
 
-.card-footer {
-    color: darken($body-bg, 30%);
-    background-color: darken($body-bg, 2%);
+:root {
+    --sw-paper: #{$sw-paper};
+    --sw-ink: #{$sw-ink};
+    --sw-muted: #{$sw-muted};
+    --sw-hairline: #{$sw-hairline};
+    --sw-surface: #{$sw-surface};
+    --sw-red: #{$sw-red};
 }
 
 .light-mode { display: block; }
 .dark-mode { display: none; }
-
-.section2 {
-    background-color: darken($body-bg, 3%);
-}
-
-.active:after {
-    background-color: $accent;
-}
-
-.navbar {
-    border-bottom: 2px solid rgba($accent, 0.5);
-}
-
-h2 {
-    border-left-color: rgba($accent, 0.6);
-}
-
-.quarto-title-banner {
-    background: darken($body-bg, 3%);
-}
-
-.quarto-title-banner,
-.quarto-title-banner a,
-.quarto-title-banner h1,
-.quarto-title-banner .h1,
-.quarto-title-banner h2,
-.quarto-title-banner .h2 {
-    color: $body-color;
-}

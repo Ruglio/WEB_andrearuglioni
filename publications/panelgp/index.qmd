@@ -4,7 +4,7 @@ date: '2026-08-01'
 author:
 - name: Andrea Ruglioni
   orcid: 0009-0003-5208-5907
-- name: Damir Filipović
+- name: Damir Filipovic
 
 categories:
   - Panel factor models
@@ -12,7 +12,7 @@ categories:
   - Bayesian econometrics
   - Asset returns
 
-subtitle: "Working paper, 2026"
+subtitle: "Working paper"
 description: "Putting Gaussian process priors on a factor model's loading and factor maps to predict the whole cross-sectional distribution of returns, not just its mean."
 ---
 

@@ -17,7 +17,6 @@ categories:
   - Surrogate modeling
   - Deep kernel learning
   
-subtitle: "2024"
 description: "A joint optimization of the physical structure and control system of wave energy converters using deep kernel learning as a surrogate model."
 ---
 

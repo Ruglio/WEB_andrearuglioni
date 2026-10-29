@@ -1,4 +1,5 @@
 ---
+title: "Publications"
 pagetitle: "Publications"
 listing:
   contents:
@@ -9,8 +10,7 @@ listing:
   categories: false
   sort-ui: false
   filter-ui: false
-  fields: [title, author, subtitle]
-  image-align: left
+  fields: [title, author, subtitle, date]
   template: pub-list.ejs.md
 
 title-block-banner: false

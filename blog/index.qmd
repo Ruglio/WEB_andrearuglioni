@@ -1,4 +1,5 @@
 ---
+title: "Blog"
 pagetitle: "Blog"
 author: ""
 listing:
@@ -14,15 +15,6 @@ listing:
   image-height: 200px
 
 title-block-banner: false
-comments: false  
-
-include-before-body: 
-  text: |
-    <style type="text/css">
-      a.nav-link.active::after {
-        height: 3px;
-      }
-    </style>
+page-layout: full
+comments: false
 ---
-
-

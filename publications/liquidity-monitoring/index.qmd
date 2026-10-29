@@ -5,14 +5,14 @@ author:
 - name: Andrea Ruglioni
   orcid: 0009-0003-5208-5907
 - name: Aurel Ruben Mäder
-- name: Damir Filipović
+- name: Damir Filipovic
 
 categories:
   - Liquidity risk
   - Payment forecasting
   - Probabilistic modeling
 
-subtitle: "Working paper, 2026 -- with the Swiss National Bank"
+subtitle: "Working paper -- with the Swiss National Bank"
 description: "A monitoring signal for unusually low incoming payments, and a way to split the blame for a shortfall across counterparties that adds up exactly."
 ---
 

@@ -25,5 +25,29 @@
   },
   "index.qmd": {
     "index.html": "95db8a68"
+  },
+  "blog/finance/financial-time-series-blog.qmd": {
+    "financial-time-series-blog.html": "8771ab24"
+  },
+  "blog/finance/Glosten-Milgrom/index.qmd": {
+    "index.html": "94b585fd"
+  },
+  "publications/liquidity-monitoring/index.qmd": {
+    "index.html": "85972abd"
+  },
+  "publications/panelgp/index.qmd": {
+    "index.html": "99715fae"
+  },
+  "docs/publications/liquidity-monitoring/index.qmd": {
+    "index.html": "b167767e"
+  },
+  "docs/publications/panelgp/index.qmd": {
+    "index.html": "bcb76982"
+  },
+  "publications/pub-list.ejs.md": {
+    "pub-list.ejs.html": "848c7381"
+  },
+  "publications/pub-list-home.ejs.md": {
+    "pub-list-home.ejs.html": "9df7f6de"
   }
 }

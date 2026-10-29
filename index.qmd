@@ -1,7 +1,5 @@
 ---
 pagetitle: Andrea Ruglioni
-title: Andrea Ruglioni
-subtitle: Doctoral candidate in quantitative finance<br>Swiss Finance Institute, EPFL
 image: assets/images/profile.jpg
 image-alt: Andrea Ruglioni
 
@@ -19,70 +17,75 @@ listing:
     categories: false
     sort-ui: false
     filter-ui: false
-    fields: [title, author, subtitle]
+    fields: [title, author, subtitle, date]
     max-items: 3
-    image-align: left
     template: publications/pub-list-home.ejs.md
-
-about:
-  template: trestles
-  id: hero-heading
-  image-shape: rounded
-  links:
-    - icon: github
-      aria-label: GitHub
-      href: https://github.com/Ruglio
-    - icon: linkedin
-      aria-label: "LinkedIn"
-      href: https://linkedin.com/in/andrea-ruglioni
-    - text: "{{< ai orcid >}}"
-      href: https://orcid.org/0009-0003-5208-5907
-    - text: "{{< ai google-scholar >}}"
-      aria-label: "Google Scholar"
-      href: https://scholar.google.com/citations?user=3sdazUQAAAAJ&hl=en
-    - icon: envelope
-      aria-label: email
-      href: mailto:andrea.ruglioni@epfl.ch
-
-format:
-  html:
-    css: assets/styles/style_personalized.css
 
 page-layout: full
 ---
 
 
+::::: {.sw-hero}
 
-::: {#hero-heading}
+<h1 class="sw-name">Andrea<br>Ruglioni<span class="sw-square" aria-hidden="true"></span></h1>
 
-I'm a PhD student in Quantitative Finance at the Swiss Finance Institute, EPFL. My research sits between ML, optimization, and finance -- I enjoy both building new methods and digging into empirical questions in these areas.
-
-Get in touch by [sending me an email](mailto:andrea.ruglioni@epfl.ch) {{< fa feather-pointed >}}
-
+::: {.sw-portrait}
+![](assets/images/profile.jpg){fig-alt="Andrea Ruglioni" .nolightbox}
 :::
 
-
-<br>
-
-
-## Education
-
-:::::: {.grid}
+:::::
 
 
+::::: {.sw-intro}
 
-::::: {.g-col-12 .g-col-md-6}
-
-:::: {.grid}
-
-::: {.g-col-12 .g-col-md-4 .mx-auto .my-auto}
-![](assets/images/epfl.png){width=75px .logo-img}
+::: {.sw-role}
+Doctoral candidate in quantitative finance<br>
+EPFL
 :::
 
-::: {.g-col-12 .g-col-md-8}
-**PhD in Quantitative Finance**<br>
-*Swiss Finance Institute, EPFL*<br>
-2024 - Present
+::: {.sw-lede}
+I'm a PhD student in Quantitative Finance at EPFL. My research sits between ML, optimization, and finance -- I enjoy both building new methods and digging into empirical questions in these areas.
+
+Get in touch by [sending me an email](mailto:andrea.ruglioni@epfl.ch).
+
+[[GitHub](https://github.com/Ruglio)]{.sw-link}
+[[LinkedIn](https://linkedin.com/in/andrea-ruglioni)]{.sw-link}
+[[ORCID](https://orcid.org/0009-0003-5208-5907)]{.sw-link}
+[[Google Scholar](https://scholar.google.com/citations?user=3sdazUQAAAAJ&hl=en)]{.sw-link}
+[[Email](mailto:andrea.ruglioni@epfl.ch)]{.sw-link}
+:::
+
+:::::
+
+
+::::: {.sw-section}
+
+## Education {.unnumbered .unlisted}
+
+:::: {.sw-rows}
+
+::: {.sw-row}
+[2024 – Present]{.sw-when}
+[**PhD in Quantitative Finance**<br>EPFL]{.sw-what}
+[![EPFL](assets/images/epfl.png){.nolightbox height="26"}]{.sw-logo}
+:::
+
+::: {.sw-row}
+[2022 – 2024]{.sw-when}
+[**MSc in Mathematical Engineering**<br>Politecnico di Torino]{.sw-what}
+[![Politecnico di Torino](assets/images/polito.svg){.nolightbox}]{.sw-logo}
+:::
+
+::: {.sw-row}
+[2023 – 2024]{.sw-when}
+[**Erasmus+ Exchange Program**<br>KTH Royal Institute of Technology]{.sw-what}
+[![KTH](assets/images/kth.svg){.nolightbox}]{.sw-logo}
+:::
+
+::: {.sw-row}
+[2019 – 2022]{.sw-when}
+[**BSc in Mathematics for Engineering**<br>Politecnico di Torino]{.sw-what}
+[![Politecnico di Torino](assets/images/polito.svg){.nolightbox}]{.sw-logo}
 :::
 
 ::::
@@ -90,37 +93,16 @@ Get in touch by [sending me an email](mailto:andrea.ruglioni@epfl.ch) {{< fa fea
 :::::
 
 
-::::: {.g-col-12 .g-col-md-6}
+::::: {.sw-section}
 
-:::: {.grid}
+## Experience {.unnumbered .unlisted}
 
-::: {.g-col-12 .g-col-md-4 .mx-auto .my-auto}
-![](assets/images/polito.png){width=75px .logo-img}
-:::
+:::: {.sw-rows}
 
-::: {.g-col-12 .g-col-md-8}
-**MSc in Mathematical Engineering**<br>
-*Politecnico di Torino*<br>
-2022 - 2024
-:::
-
-::::
-
-:::::
-
-
-::::: {.g-col-12 .g-col-md-6}
-
-:::: {.grid}
-
-::: {.g-col-12 .g-col-md-4 .mx-auto .my-auto}
-![](assets/images/kth.png){width=75px .logo-img}
-:::
-
-::: {.g-col-12 .g-col-md-8}
-**Erasmus+ Exchange Program**<br>
-*KTH Royal Institute of Technology*<br>
-2023 - 2024
+::: {.sw-row}
+[Jan 2026 – Present]{.sw-when}
+[**External Research Collaborator, Banking Operations Analysis**<br>Swiss National Bank]{.sw-what}
+[![Swiss National Bank](assets/images/snb.svg){.nolightbox}]{.sw-logo}
 :::
 
 ::::
@@ -128,62 +110,13 @@ Get in touch by [sending me an email](mailto:andrea.ruglioni@epfl.ch) {{< fa fea
 :::::
 
 
-::::: {.g-col-12 .g-col-md-6}
+::::: {.sw-section}
 
-:::: {.grid}
-
-::: {.g-col-12 .g-col-md-4 .mx-auto .my-auto}
-![](assets/images/polito.png){width=75px .logo-img}
-:::
-
-::: {.g-col-12 .g-col-md-8}
-**BSc in Mathematics for Engineering**<br>
-*Politecnico di Torino*<br>
-2019 - 2022
-:::
-
-::::
-
-:::::
-
-
-
-::::::
-
-
-<br>
-
-
-## Experience
-
-:::::: {.grid}
-
-::::: {.g-col-12 .g-col-md-6}
-
-:::: {.grid}
-
-::: {.g-col-12 .g-col-md-4 .mx-auto .my-auto}
-![](assets/images/snb.svg){width=75px .logo-img}
-:::
-
-::: {.g-col-12 .g-col-md-8}
-**External Research Collaborator, Banking Operations Analysis**<br>
-*Swiss National Bank*<br>
-January 2026 - Present
-:::
-
-::::
-
-:::::
-
-::::::
-
-
-<br>
-
-
-## [Publications &rarr;](publications/index.qmd)
+## Publications {.unnumbered .unlisted}
 
 ::: {#publications}
-
 :::
+
+[All publications &rarr;](publications/index.qmd){.sw-more}
+
+:::::

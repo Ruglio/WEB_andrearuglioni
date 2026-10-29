@@ -4,8 +4,6 @@
       "."
     ],
     "index.qmd": [
-      "../blog/*/**/index.qmd",
-      "../blog/*/**/index.md",
       "../publications/*/**/index.qmd",
       "../publications/*/**/index.md"
     ],

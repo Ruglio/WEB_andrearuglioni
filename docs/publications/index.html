@@ -26,7 +26,7 @@ ul.task-list li input[type="checkbox"] {
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<link href="../assets/images/logo.svg" rel="icon" type="image/svg+xml">
+<link href="../assets/images/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-listing/list.min.js"></script>
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
@@ -43,10 +43,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/academicons-1.9.2/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/academicons-1.9.2/size.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -72,9 +68,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-subtitle','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
       
-      searchColumns: ["listing-project","listing-website","listing-format","listing-page-layout","listing-execute","listing-language","listing-date-format","listing-title-block-banner","listing-title","listing-date","listing-author","listing-categories","listing-subtitle","listing-description","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+      searchColumns: ["listing-project","listing-website","listing-format","listing-page-layout","listing-execute","listing-language","listing-date-format","listing-title-block-banner","listing-title","listing-date","listing-author","listing-categories","listing-description","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count","listing-subtitle"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -120,7 +116,7 @@ cookieconsent.run({
   
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&amp;family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../assets/styles/styles.css">
@@ -173,7 +169,23 @@ cookieconsent.run({
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Publications</h1>
+</div>
 
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 
@@ -184,27 +196,39 @@ cookieconsent.run({
 <div class="pub-list">
 
   
+  
   <div class="pub-item">
-    <div class="pub-title"><a href="panelgp/index.html">PanelGP: A Probabilistic Factor Model for Asset-Return Panels</a></div>
-    <div class="pub-authors">Andrea Ruglioni, Damir Filipović</div>
-    <div class="pub-venue">Working paper, 2026</div>
-    
+    <div class="pub-year">2026</div>
+    <div class="pub-body">
+      <div class="pub-title"><a href="panelgp/index.html">PanelGP: A Probabilistic Factor Model for Asset-Return Panels</a></div>
+      <div class="pub-authors">Andrea Ruglioni, Damir Filipovic</div>
+      <div class="pub-venue">Working paper</div>
+      
+    </div>
   </div>
 
   
+  
   <div class="pub-item">
-    <div class="pub-title"><a href="liquidity-monitoring/index.html">Flagging Low Incoming Liquidity, and Explaining Why</a></div>
-    <div class="pub-authors">Andrea Ruglioni, Aurel Ruben Mäder, Damir Filipović</div>
-    <div class="pub-venue">Working paper, 2026 -- with the Swiss National Bank</div>
-    
+    <div class="pub-year">2026</div>
+    <div class="pub-body">
+      <div class="pub-title"><a href="liquidity-monitoring/index.html">Flagging Low Incoming Liquidity, and Explaining Why</a></div>
+      <div class="pub-authors">Andrea Ruglioni, Aurel Ruben Mäder, Damir Filipovic</div>
+      <div class="pub-venue">Working paper – with the Swiss National Bank</div>
+      
+    </div>
   </div>
 
   
+  
   <div class="pub-item">
-    <div class="pub-title"><a href="WEC/index.html">Optimizing wave energy converters: A co-design approach using surrogate modeling</a></div>
-    <div class="pub-authors">Andrea Ruglioni, Edoardo Pasta, Nicolàs Faedo, Paolo Brandimarte</div>
-    <div class="pub-venue">2024</div>
-    
+    <div class="pub-year">2024</div>
+    <div class="pub-body">
+      <div class="pub-title"><a href="WEC/index.html">Optimizing wave energy converters: A co-design approach using surrogate modeling</a></div>
+      <div class="pub-authors">Andrea Ruglioni, Edoardo Pasta, Nicolàs Faedo, Paolo Brandimarte</div>
+      
+      
+    </div>
   </div>
 
 </div>
@@ -780,13 +804,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2024-2026 Andrea Ruglioni</p>
+<p>© 2024–2026 Andrea Ruglioni</p>
 </div>   
     <div class="nav-footer-center">
-<p><a class="footer-link" href="https://github.com/Ruglio" title="github"><i class="fa-brands fa-github" aria-label="github"></i></a> <a class="footer-link" href="https://linkedin.com/in/andrea-ruglioni" title="LinkedIn"><i class="fa-brands fa-linkedin" aria-label="linkedin"></i></a> <a class="footer-link" href="https://orcid.org/0009-0003-5208-5907" title="orcid"><i class="ai  ai-orcid"></i></a> <a class="footer-link" href="https://scholar.google.com/citations?user=3sdazUQAAAAJ&amp;hl=en" title="Google Scholar"><i class="ai  ai-google-scholar"></i></a> <a class="footer-link" href="mailto:andrea.ruglioni@epfl.ch" title="envelope"><i class="fa-solid fa-envelope" aria-label="envelope"></i></a> <a class="footer-link" href="blog/index.xml" title="RSS Feed"><i class="fa-solid fa-rss" aria-label="rss"></i></a></p>
+<p><a class="footer-link" href="https://github.com/Ruglio">GitHub</a> <a class="footer-link" href="https://linkedin.com/in/andrea-ruglioni">LinkedIn</a> <a class="footer-link" href="https://orcid.org/0009-0003-5208-5907">ORCID</a> <a class="footer-link" href="https://scholar.google.com/citations?user=3sdazUQAAAAJ&amp;hl=en">Scholar</a> <a class="footer-link" href="mailto:andrea.ruglioni@epfl.ch">Email</a> <a class="footer-link" href="blog/index.xml">RSS</a></p>
 <div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
-<p>Made with <a href="https://quarto.org">Quarto</a><br> <a href="https://github.com/Ruglio/WEB_andrearuglioni">Source code on <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
+<p>Made with <a href="https://quarto.org">Quarto</a> · <a href="https://github.com/Ruglio/WEB_andrearuglioni">Source</a></p>
 </div>
   </div>
 </footer>

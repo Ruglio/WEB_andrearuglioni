@@ -14,6 +14,8 @@ author:
 
 title-block-banner: true
 
+page-layout: article
+
 freeze: true
 
 format: 

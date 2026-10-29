@@ -1,66 +1,59 @@
 /*-- scss:defaults --*/
 
-$body-bg:                                 #313745 !default;
-$body-color:                              #fdfdfd !default;
-$headings-color:                          $body-color !default;
-$font-family-sans-serif:                  "Newsreader", Georgia, serif !default;
-$headings-font-family:                    "Newsreader", Georgia, serif !default;
-$code-block-bg:                           lighten($body-bg, 3%) !default;
-$navbar-bg:                               lighten($body-bg, 3%) !default;
-$footer-bg:                               lighten($body-bg, 3%) !default;
+// Swiss palette, inverted: ink becomes paper, the red stays.
+$sw-paper:                                #101010;
+$sw-ink:                                  #f2f2f0;
+$sw-muted:                                #9c9c9a;
+$sw-hairline:                             #333333;
+$sw-surface:                              #1b1b1b;
+$sw-red:                                  #ff3b30;
 
-$accent:                                  #8fb4de !default;
+$body-bg:                                 $sw-paper !default;
+$body-color:                              $sw-ink !default;
+$headings-color:                          $sw-ink !default;
+$text-muted:                              $sw-muted !default;
+$border-color:                            $sw-hairline !default;
+$primary:                                 $sw-ink !default;
 
-$link-color:                              $accent !default;
-$link-shade-percentage:                   15% !default;
-$link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
+$font-family-sans-serif:                  "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$headings-font-family:                    "Inter Tight", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$headings-font-weight:                    700 !default;
 
-$code-color:                              darken($body-color, 10%) !default;
-$code-bg:                                 lighten($body-bg, 10%) !default;
+$link-color:                              $sw-ink !default;
+$link-hover-color:                        $sw-red !default;
 
-$card-border-color:                       $body-color !default;
-$form-select-border-color:                $body-color !default;
+$navbar-bg:                               $sw-paper !default;
+$navbar-fg:                               $sw-ink !default;
+$navbar-hl:                               $sw-red !default;
+$footer-bg:                               $sw-paper !default;
+$footer-fg:                               $sw-muted !default;
+
+$code-block-bg:                           $sw-surface !default;
+$code-color:                              $sw-ink !default;
+$code-bg:                                 $sw-surface !default;
+
+$enable-rounded:                          false !default;
+$border-radius:                           0 !default;
+$border-radius-sm:                        0 !default;
+$border-radius-lg:                        0 !default;
+
+$card-border-color:                       $sw-ink !default;
+$form-select-border-color:                $sw-ink !default;
 
 /*-- scss:rules --*/
 
-.card-footer {
-    color: lighten($body-bg, 30%);
-    background-color: lighten($body-bg, 2%);
+:root {
+    --sw-paper: #{$sw-paper};
+    --sw-ink: #{$sw-ink};
+    --sw-muted: #{$sw-muted};
+    --sw-hairline: #{$sw-hairline};
+    --sw-surface: #{$sw-surface};
+    --sw-red: #{$sw-red};
 }
 
 .dark-mode { display: block; }
 .light-mode { display: none; }
 
-.section2 {
-    background-color: lighten($body-bg, 3%);
-}
-
-.active:after {
-    background-color: $accent;
-}
-
-.navbar {
-    border-bottom: 2px solid rgba($accent, 0.5);
-}
-
-h2 {
-    border-left-color: rgba($accent, 0.6);
-}
-
-.quarto-title-banner {
-    background: lighten($body-bg, 3%);
-}
-
-.quarto-title-banner,
-.quarto-title-banner a,
-.quarto-title-banner h1,
-.quarto-title-banner .h1,
-.quarto-title-banner h2,
-.quarto-title-banner .h2 {
-    color: $body-color;
-}
-
-.logo-img,
-.navbar-logo {
+.sw-logo img {
     filter: brightness(0) invert(1);
 }
