@@ -51,13 +51,11 @@ a:hover {
     max-height: 26px;
 }
 
-/* Dark mode swaps in the light-on-dark logo (Quarto sets body.quarto-dark). */
-body.quarto-dark .navbar-brand-logo {
-    background: url("../images/logo-dark.svg") no-repeat center / 26px 26px;
-}
-
-body.quarto-dark .navbar-brand-logo .navbar-logo {
-    opacity: 0;
+/* Dark mode swaps in the light-on-dark logo (Quarto sets body.quarto-dark).
+   Drawn on the same <img> box, so both modes are exactly the same size. */
+body.quarto-dark img.navbar-logo {
+    object-position: -9999px 0;
+    background: url("../images/logo-dark.svg") no-repeat center / contain;
 }
 
 .navbar-title {
@@ -95,6 +93,85 @@ body.quarto-dark .navbar-brand-logo .navbar-logo {
 
 .navbar .quarto-color-scheme-toggle .bi::before {
     color: var(--sw-ink);
+}
+
+/* Burger: two bars that cross into an X when the menu is open. */
+.navbar-toggler,
+.navbar-toggler:focus {
+    border: none;
+    padding: 0.6rem 0.25rem;
+    box-shadow: none !important;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+    position: relative;
+    width: 22px;
+    height: 14px;
+    background-image: none !important;
+}
+
+.navbar-toggler .navbar-toggler-icon::before,
+.navbar-toggler .navbar-toggler-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--sw-ink);
+    transition: top 0.2s ease, transform 0.2s ease;
+}
+
+.navbar-toggler .navbar-toggler-icon::before {
+    top: 2px;
+}
+
+.navbar-toggler .navbar-toggler-icon::after {
+    top: 10px;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    top: 6px;
+    transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    top: 6px;
+    transform: rotate(-45deg);
+}
+
+/* Collapsed (phone) menu: large type, hairline rules, red square on the active page. */
+@media (max-width: 991.98px) {
+    .navbar-collapse .navbar-nav {
+        margin-top: 0.85rem;
+        border-top: 1px solid var(--sw-hairline);
+    }
+
+    .navbar-collapse .nav-item {
+        border-bottom: 1px solid var(--sw-hairline);
+    }
+
+    .navbar-collapse .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .navbar .navbar-collapse .nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: var(--sw-display);
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        padding: 0.75rem 0 !important;
+    }
+
+    .navbar .navbar-collapse .nav-link.active::before {
+        position: static;
+        order: 2;
+        width: 0.6rem;
+        height: 0.6rem;
+        transform: none;
+    }
 }
 
 /* ---------- Headings ---------- */
