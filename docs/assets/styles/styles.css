@@ -321,9 +321,16 @@ main.content h1.sw-name {
     text-decoration: none;
 }
 
+/* North-east arrow drawn as a vector mask: the U+2197 character renders as an emoji on phones. */
 .sw-link a::after {
-    content: "\2009\2197";
-    color: var(--sw-red);
+    content: "";
+    display: inline-block;
+    width: 0.55em;
+    height: 0.55em;
+    margin-left: 0.25em;
+    background-color: var(--sw-red);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M1.5 8.5L8.5 1.5M3 1.5h5.5V7' fill='none' stroke='black' stroke-width='1.8'/%3E%3C/svg%3E") no-repeat center / contain;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M1.5 8.5L8.5 1.5M3 1.5h5.5V7' fill='none' stroke='black' stroke-width='1.8'/%3E%3C/svg%3E") no-repeat center / contain;
 }
 
 /* ---------- Numbered sections ---------- */
