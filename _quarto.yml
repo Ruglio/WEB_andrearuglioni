@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - assets/cv/Andrea_Ruglioni_CV.pdf
   render:
     - "*.qmd"
     - "*.md"
@@ -39,17 +41,21 @@ website:
       - text: Publications
         aria-label: "Publications"
         href: publications/index.html
+      - text: CV
+        aria-label: "Curriculum vitae (PDF)"
+        href: assets/cv/Andrea_Ruglioni_CV.pdf
 
   page-footer:
     left: >-
      &#169; 2024&ndash;2026 Andrea Ruglioni
-    center: |
-      <a class="footer-link" href="https://github.com/Ruglio">GitHub</a>
-      <a class="footer-link" href="https://linkedin.com/in/andrea-ruglioni">LinkedIn</a>
-      <a class="footer-link" href="https://orcid.org/0009-0003-5208-5907">ORCID</a>
-      <a class="footer-link" href="https://scholar.google.com/citations?user=3sdazUQAAAAJ&hl=en">Scholar</a>
-      <a class="footer-link" href="mailto:andrea.ruglioni@epfl.ch">Email</a>
-      <a class="footer-link" href="blog/index.xml">RSS</a>
+    center: >-
+      [CV](https://ruglio.github.io/WEB_andrearuglioni/assets/cv/Andrea_Ruglioni_CV.pdf){.footer-link}
+      [GitHub](https://github.com/Ruglio){.footer-link}
+      [LinkedIn](https://linkedin.com/in/andrea-ruglioni){.footer-link}
+      [ORCID](https://orcid.org/0009-0003-5208-5907){.footer-link}
+      [Scholar](https://scholar.google.com/citations?user=3sdazUQAAAAJ&hl=en){.footer-link}
+      [Email](mailto:andrea.ruglioni@epfl.ch){.footer-link}
+      [RSS](https://ruglio.github.io/WEB_andrearuglioni/blog/index.xml){.footer-link}
     right: >-
       Made with [Quarto](https://quarto.org) &middot;
       [Source](https://github.com/Ruglio/WEB_andrearuglioni)

@@ -44,10 +44,11 @@ EPFL
 :::
 
 ::: {.sw-lede}
-I'm a PhD student in Quantitative Finance at EPFL. My research sits between ML, optimization, and finance -- I enjoy both building new methods and digging into empirical questions in these areas.
+I'm a PhD student in Quantitative Finance at EPFL. My research sits between ML, optimization, and finance. I enjoy building new methods, digging into empirical questions, and curiously explore ideas.
 
 Get in touch by [sending me an email](mailto:andrea.ruglioni@epfl.ch).
 
+[[CV](assets/cv/Andrea_Ruglioni_CV.pdf)]{.sw-link}
 [[GitHub](https://github.com/Ruglio)]{.sw-link}
 [[LinkedIn](https://linkedin.com/in/andrea-ruglioni)]{.sw-link}
 [[ORCID](https://orcid.org/0009-0003-5208-5907)]{.sw-link}

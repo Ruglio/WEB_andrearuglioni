@@ -3,16 +3,7 @@
     "listing": "/publications/index.html",
     "items": [
       "/publications/panelgp/index.html",
-      "/publications/liquidity-monitoring/index.html",
-      "/publications/WEC/index.html"
-    ]
-  },
-  {
-    "listing": "/index.html",
-    "items": [
-      "/publications/panelgp/index.html",
-      "/publications/liquidity-monitoring/index.html",
-      "/publications/WEC/index.html"
+      "/publications/liquidity-monitoring/index.html"
     ]
   },
   {
@@ -21,6 +12,13 @@
       "/blog/dkl/s3/index.html",
       "/blog/dkl/s2/index.html",
       "/blog/dkl/s1/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/publications/panelgp/index.html",
+      "/publications/liquidity-monitoring/index.html"
     ]
   }
 ]

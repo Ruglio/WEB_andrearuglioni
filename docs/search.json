@@ -88,7 +88,14 @@
     "href": "publications/index.html",
     "title": "Publications",
     "section": "",
-    "text": "2026\n    \n      PanelGP: A Probabilistic Factor Model for Asset-Return Panels\n      Andrea Ruglioni, Damir Filipovic\n      Working paper\n      \n    \n  \n\n  \n  \n  \n    2026\n    \n      Flagging Low Incoming Liquidity, and Explaining Why\n      Andrea Ruglioni, Aurel Ruben Mäder, Damir Filipovic\n      Working paper – with the Swiss National Bank\n      \n    \n  \n\n  \n  \n  \n    2024\n    \n      Optimizing wave energy converters: A co-design approach using surrogate modeling\n      Andrea Ruglioni, Edoardo Pasta, Nicolàs Faedo, Paolo Brandimarte\n      \n      \n    \n  \n\n\n\nNo matching items"
+    "text": "2026\n    \n      PanelGP: A Probabilistic Factor Model for Asset-Return Panels\n      Andrea Ruglioni, Damir Filipovic\n      Working paper\n      \n    \n  \n\n  \n  \n  \n    2026\n    \n      Flagging Low Incoming Liquidity, and Explaining Why\n      Andrea Ruglioni, Aurel Ruben Mäder, Damir Filipovic\n      Working paper – with the Swiss National Bank\n      \n    \n  \n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Deep kernel learning\n\n\n\n\n\nDeep Kernel Learning (DKL) combines deep neural networks with Gaussian Processes to model complex data patterns. In this post, we explore DKL and implement a DKL model using the GPyTorch library in Python.\n\n\n\n\n\nJul 10, 2024\n\n\n10 min\n\n\n\n\n\n\n\n\n\n\n\n\nMulti-task Gaussian processes\n\n\n\n\n\nLearn how to model multiple correlated outputs using the intrinsic model of coregionalization (ICM) and the linear model of coregionalization (LMC).\n\n\n\n\n\nJul 8, 2024\n\n\n11 min\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Gaussian processes\n\n\n\n\n\nAn introduction to Gaussian Processes, discussing their mathematical foundations and practical applications in regression tasks.\n\n\n\n\n\nJun 25, 2024\n\n\n17 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#education",
@@ -109,28 +116,7 @@
     "href": "index.html#publications",
     "title": "\nAndreaRuglioni\n",
     "section": "Publications",
-    "text": "Publications\n\n\n\n  \n  \n    2026\n    \n      PanelGP: A Probabilistic Factor Model for Asset-Return Panels\n      Andrea Ruglioni, Damir Filipovic\n      Working paper\n      \n    \n  \n\n  \n  \n    2026\n    \n      Flagging Low Incoming Liquidity, and Explaining Why\n      Andrea Ruglioni, Aurel Ruben Mäder, Damir Filipovic\n      Working paper – with the Swiss National Bank\n      \n    \n  \n\n  \n  \n    2024\n    \n      Optimizing wave energy converters: A co-design approach using surrogate modeling\n      Andrea Ruglioni, Edoardo Pasta, Nicolàs Faedo, Paolo Brandimarte\n      \n      \n    \n  \n\n\n\nNo matching items\n\n\nAll publications →"
-  },
-  {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Deep kernel learning\n\n\n\n\n\nDeep Kernel Learning (DKL) combines deep neural networks with Gaussian Processes to model complex data patterns. In this post, we explore DKL and implement a DKL model using the GPyTorch library in Python.\n\n\n\n\n\nJul 10, 2024\n\n\n10 min\n\n\n\n\n\n\n\n\n\n\n\n\nMulti-task Gaussian processes\n\n\n\n\n\nLearn how to model multiple correlated outputs using the intrinsic model of coregionalization (ICM) and the linear model of coregionalization (LMC).\n\n\n\n\n\nJul 8, 2024\n\n\n11 min\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Gaussian processes\n\n\n\n\n\nAn introduction to Gaussian Processes, discussing their mathematical foundations and practical applications in regression tasks.\n\n\n\n\n\nJun 25, 2024\n\n\n17 min\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "publications/WEC/index.html",
-    "href": "publications/WEC/index.html",
-    "title": "Optimizing wave energy converters: A co-design approach using surrogate modeling",
-    "section": "",
-    "text": "Wave energy converters (WECs) offer a promising source of renewable energy, but they require a careful joint optimization of both their geometry andcontrol strategy in order to cope with the complexity of marine environments. This joint optimization process is hindered by high computational costs. This paper presents an integrated co-design framework that simultaneously optimizes the WEC physical structure and control system using deep kernel learning (DKL) as a surrogate model. The DKL model, trained on high-fidelity simulations, enables efficient and accurate predictions, while maintaining essential physical constraints. A case study on a spherical WEC shows significant improvements in computational efficiency and a suitable prediction accuracy, advancing WEC design methodologies."
-  },
-  {
-    "objectID": "publications/WEC/index.html#abstract",
-    "href": "publications/WEC/index.html#abstract",
-    "title": "Optimizing wave energy converters: A co-design approach using surrogate modeling",
-    "section": "",
-    "text": "Wave energy converters (WECs) offer a promising source of renewable energy, but they require a careful joint optimization of both their geometry andcontrol strategy in order to cope with the complexity of marine environments. This joint optimization process is hindered by high computational costs. This paper presents an integrated co-design framework that simultaneously optimizes the WEC physical structure and control system using deep kernel learning (DKL) as a surrogate model. The DKL model, trained on high-fidelity simulations, enables efficient and accurate predictions, while maintaining essential physical constraints. A case study on a spherical WEC shows significant improvements in computational efficiency and a suitable prediction accuracy, advancing WEC design methodologies."
+    "text": "Publications\n\n\n\n  \n  \n    2026\n    \n      PanelGP: A Probabilistic Factor Model for Asset-Return Panels\n      Andrea Ruglioni, Damir Filipovic\n      Working paper\n      \n    \n  \n\n  \n  \n    2026\n    \n      Flagging Low Incoming Liquidity, and Explaining Why\n      Andrea Ruglioni, Aurel Ruben Mäder, Damir Filipovic\n      Working paper – with the Swiss National Bank\n      \n    \n  \n\n\n\nNo matching items\n\n\nAll publications →"
   },
   {
     "objectID": "publications/liquidity-monitoring/index.html",
