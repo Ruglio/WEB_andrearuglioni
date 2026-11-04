@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-title','listing-author','listing-subtitle','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
       
-      searchColumns: ["listing-project","listing-website","listing-format","listing-page-layout","listing-execute","listing-language","listing-date-format","listing-title-block-banner","listing-title","listing-date","listing-author","listing-categories","listing-subtitle","listing-description","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count","listing-pdf","listing-code","listing-google-scholar","listing-citation"],
+      searchColumns: ["listing-project","listing-website","listing-format","listing-page-layout","listing-execute","listing-language","listing-date-format","listing-title-block-banner","listing-title","listing-date","listing-author","listing-categories","listing-subtitle","listing-description","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count","listing-pdf","listing-code","listing-html-math-method","listing-resources","listing-google-scholar","listing-citation"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -206,11 +206,11 @@ cookieconsent.run({
     <div class="pub-body">
       <div class="pub-title"><a href="panelgp/index.html">PanelGP: A Probabilistic Factor Model for Asset-Return Panels</a></div>
       <div class="pub-authors">Andrea Ruglioni, Damir Filipovic</div>
-      <div class="pub-venue">Working paper – arXiv:2611.04040</div>
+      <div class="pub-venue">Working paper</div>
       
       <div class="pub-links">
-        <a href="https://arxiv.org/pdf/2611.04040">PDF</a>
-        <a href="https://github.com/Ruglio/PanelGP">Code</a>
+        <a href="https://arxiv.org/pdf/2611.04040" target="_blank" rel="noopener">PDF</a>
+        <a href="https://github.com/Ruglio/PanelGP" target="_blank" rel="noopener">Code</a>
         
         
       </div>
@@ -485,6 +485,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

@@ -1,0 +1,49 @@
+model,factors,metric,mean,low,high,seeds
+IPCA with intercept,1,Rank correlation (%),3.3499,3.3499,3.3499,1
+IPCA with intercept,1,Tangency Sharpe ratio,0.9602,0.9602,0.9602,1
+IPCA with intercept,2,Rank correlation (%),3.4766,3.4766,3.4766,1
+IPCA with intercept,2,Tangency Sharpe ratio,1.1499,1.1499,1.1499,1
+IPCA with intercept,3,Rank correlation (%),3.2249,3.2249,3.2249,1
+IPCA with intercept,3,Tangency Sharpe ratio,1.0299,1.0299,1.0299,1
+IPCA with intercept,4,Rank correlation (%),3.1529,3.1529,3.1529,1
+IPCA with intercept,4,Tangency Sharpe ratio,1.0703,1.0703,1.0703,1
+IPCA with intercept,5,Rank correlation (%),3.1126,3.1126,3.1126,1
+IPCA with intercept,5,Tangency Sharpe ratio,1.1676,1.1676,1.1676,1
+IPCA with intercept,6,Rank correlation (%),2.983,2.983,2.983,1
+IPCA with intercept,6,Tangency Sharpe ratio,1.1671,1.1671,1.1671,1
+IPCA with intercept,7,Rank correlation (%),2.9655,2.9655,2.9655,1
+IPCA with intercept,7,Tangency Sharpe ratio,1.2178,1.2178,1.2178,1
+IPCA with intercept,8,Rank correlation (%),2.742,2.742,2.742,1
+IPCA with intercept,8,Tangency Sharpe ratio,1.4265,1.4265,1.4265,1
+"PanelGP, RBF loadings and factors",1,Rank correlation (%),1.3113,0.8353,2.0166,5
+"PanelGP, RBF loadings and factors",1,Tangency Sharpe ratio,0.444,0.3314,0.5808,5
+"PanelGP, RBF loadings and factors",2,Rank correlation (%),4.3397,3.8057,4.5041,5
+"PanelGP, RBF loadings and factors",2,Tangency Sharpe ratio,1.2592,1.047,1.3206,5
+"PanelGP, RBF loadings and factors",3,Rank correlation (%),4.2407,3.3232,4.8866,5
+"PanelGP, RBF loadings and factors",3,Tangency Sharpe ratio,1.3084,1.1074,1.446,5
+"PanelGP, RBF loadings and factors",4,Rank correlation (%),4.4733,4.385,4.5507,5
+"PanelGP, RBF loadings and factors",4,Tangency Sharpe ratio,1.4788,1.4643,1.5008,5
+"PanelGP, RBF loadings and factors",5,Rank correlation (%),4.519,4.4277,4.6236,5
+"PanelGP, RBF loadings and factors",5,Tangency Sharpe ratio,1.5501,1.5149,1.5743,5
+"PanelGP, RBF loadings and factors",6,Rank correlation (%),4.4881,4.2785,4.5931,5
+"PanelGP, RBF loadings and factors",6,Tangency Sharpe ratio,1.5218,1.4675,1.5541,5
+"PanelGP, RBF loadings and factors",7,Rank correlation (%),4.4537,4.359,4.5307,5
+"PanelGP, RBF loadings and factors",7,Tangency Sharpe ratio,1.5437,1.5268,1.5797,5
+"PanelGP, RBF loadings and factors",8,Rank correlation (%),4.4317,4.3265,4.5158,5
+"PanelGP, RBF loadings and factors",8,Tangency Sharpe ratio,1.6495,1.5362,1.735,5
+"PanelGP, affine loadings (IPCA-like)",1,Rank correlation (%),0.0359,0.0332,0.0379,5
+"PanelGP, affine loadings (IPCA-like)",1,Tangency Sharpe ratio,0.5536,0.5534,0.5538,5
+"PanelGP, affine loadings (IPCA-like)",2,Rank correlation (%),3.5119,3.4925,3.5493,5
+"PanelGP, affine loadings (IPCA-like)",2,Tangency Sharpe ratio,1.1972,1.1781,1.2417,5
+"PanelGP, affine loadings (IPCA-like)",3,Rank correlation (%),3.5319,3.5176,3.5432,5
+"PanelGP, affine loadings (IPCA-like)",3,Tangency Sharpe ratio,1.3376,1.3271,1.3534,5
+"PanelGP, affine loadings (IPCA-like)",4,Rank correlation (%),3.3071,3.1616,3.3905,5
+"PanelGP, affine loadings (IPCA-like)",4,Tangency Sharpe ratio,1.2436,1.121,1.2932,5
+"PanelGP, affine loadings (IPCA-like)",5,Rank correlation (%),3.3162,3.107,3.3966,5
+"PanelGP, affine loadings (IPCA-like)",5,Tangency Sharpe ratio,1.2912,1.2186,1.3164,5
+"PanelGP, affine loadings (IPCA-like)",6,Rank correlation (%),3.2922,3.2311,3.3312,5
+"PanelGP, affine loadings (IPCA-like)",6,Tangency Sharpe ratio,1.2564,1.1528,1.3124,5
+"PanelGP, affine loadings (IPCA-like)",7,Rank correlation (%),3.2115,3.0983,3.2658,5
+"PanelGP, affine loadings (IPCA-like)",7,Tangency Sharpe ratio,1.2407,1.1333,1.3142,5
+"PanelGP, affine loadings (IPCA-like)",8,Rank correlation (%),3.2478,3.2131,3.289,5
+"PanelGP, affine loadings (IPCA-like)",8,Tangency Sharpe ratio,1.377,1.3518,1.428,5

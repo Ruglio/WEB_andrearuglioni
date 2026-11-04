@@ -12,11 +12,15 @@ categories:
   - Variational inference
   - Asset pricing
 
-subtitle: "Working paper -- arXiv:2611.04040"
+subtitle: "Working paper"
 description: "A conditional factor model with Gaussian-process loadings and factors that forecasts both expected returns and their covariance matrix from one estimated model."
 
 pdf: https://arxiv.org/pdf/2611.04040
 code: https://github.com/Ruglio/PanelGP
+
+html-math-method: katex
+resources:
+  - results-by-factors.csv
 
 google-scholar: true
 citation:
@@ -35,11 +39,131 @@ We develop PanelGP, a conditional factor model for large panels of stock returns
 
 ## In brief
 
-- **Model.** Firm characteristics drive the factor loadings and economic conditions drive the expected factors, both through Gaussian-process priors. With linear kernels the model reduces to IPCA; other kernels give smooth nonlinear maps.
-- **Risk as well as returns.** Separate loading and factor innovations split idiosyncratic from systematic risk, so the same fitted model delivers expected returns and a full covariance matrix.
-- **Closed forms.** Each predicted return is bilinear in a Gaussian state, so the predictive covariance and the cumulants of any portfolio are available in closed form.
-- **Evidence.** On S&P 500 constituents over 1995–2024, nonlinear loadings rank stocks better than affine ones, and the portfolios beat IPCA on Sharpe ratio, also after trading costs.
+### The model
 
-## Data and replication
+Asset $i$ at date $t$ has characteristics $x_{it} \in \mathbb{R}^P$, and all assets share an economic context $c_t \in \mathbb{R}^Q$. A loading map $\beta$ sends characteristics to $H$ factor loadings, and a factor map $\phi$ sends the context to the expected factors of the next period. Realized loadings and factors deviate from these maps by Gaussian innovations,
 
-The empirical application uses monthly data on S&P 500 constituents: firm characteristics from Jensen, Kelly and Pedersen (2023), and macro-financial predictors from Goyal, Welch and Zafirov (2024). The [replication package](https://github.com/Ruglio/PanelGP) (MIT licence) reproduces every table, figure and number of the paper at three levels: tables and figures from the included results in a few minutes on any computer, the simulation study without any data, and the full empirical application with WRDS access and a GPU.
+$$
+\begin{aligned}
+\tilde\beta_{it} &= \beta(x_{it}) + \xi_{i,t+1}, & \xi_{i,t+1} &\sim \mathcal{N}(0, D_\beta), \\
+\tilde\phi_{t} &= \phi(c_{t}) + \zeta_{t+1}, & \zeta_{t+1} &\sim \mathcal{N}(0, D_\phi),
+\end{aligned}
+$$
+
+and the excess return is bilinear in the two:
+
+$$
+r_{i,t+1} = \tilde\beta_{it}^\top \tilde\phi_t + \sigma_r\,\epsilon_{i,t+1}, \qquad \epsilon_{i,t+1} \sim \mathcal{N}(0, 1).
+$$
+
+Each component of the two maps gets an independent Gaussian-process prior, $\beta_h \sim \mathcal{GP}(0, k_{\beta,h})$ and $\phi_h \sim \mathcal{GP}(0, k_{\phi,h})$. Affine loading kernels with constant factor kernels give the structure of IPCA; RBF kernels allow nonlinear loadings and factor forecasts that depend on the context.
+
+The loading innovation is specific to each asset, while the factor innovation is common to all assets at a date. This splits risk into a systematic and an idiosyncratic part, so the same fitted model forecasts expected returns and a full covariance matrix:
+
+$$
+\begin{aligned}
+\mathbb{E}(r_{i,t+1}) &= \beta(x_{it})^\top \phi(c_t), \\
+\operatorname{Var}(r_{i,t+1}) &=
+\underbrace{\beta(x_{it})^\top D_\phi\, \beta(x_{it})}_{\text{systematic}}
++ \underbrace{\phi(c_t)^\top D_\beta\, \phi(c_t) + \operatorname{tr}(D_\beta D_\phi) + \sigma_r^2}_{\text{idiosyncratic}},
+\end{aligned}
+$$
+
+given the two maps, with covariance $\beta(x_{it})^\top D_\phi\, \beta(x_{jt})$ between two assets. Estimation uses sparse variational inference, and the predictive covariance and the cumulants of any portfolio come out in closed form.
+
+### Results
+
+The models are estimated on 1960–1989 and evaluated out of sample on S&P 500 constituents from 1995 to 2024. With five factors:
+
+::: {.pg-stats}
+::: {.pg-stat}
+[1.55]{.pg-stat-value}
+[Tangency-portfolio Sharpe ratio, against 1.17 for IPCA]{.pg-stat-label}
+:::
+::: {.pg-stat}
+[4.5%]{.pg-stat-value}
+[Rank correlation between predicted and realized returns, against 3.1%]{.pg-stat-label}
+:::
+::: {.pg-stat}
+[14.3%]{.pg-stat-value}
+[Volatility of the minimum-variance portfolio, against 16.3%]{.pg-stat-label}
+:::
+:::
+
+```{ojs}
+//| echo: false
+//| output: false
+Plot = import("https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/+esm")
+
+results = FileAttachment("results-by-factors.csv").csv({ typed: true })
+
+series = [
+  "PanelGP, RBF loadings and factors",
+  "PanelGP, affine loadings (IPCA-like)",
+  "IPCA with intercept"
+]
+
+fmt = (metric, v) => metric.startsWith("Rank") ? `${v.toFixed(2)}%` : v.toFixed(2)
+
+function panel(metric, panelWidth) {
+  const rows = results.filter(d => d.metric === metric);
+  const marks = [Plot.gridY({ stroke: "currentColor", strokeOpacity: 0.12 })];
+  if (metric.startsWith("Tangency")) {
+    marks.push(
+      Plot.ruleY([0.62], { className: "pg-ref", strokeWidth: 1 }),
+      Plot.text([{ x: 8, y: 0.62 }], { x: "x", y: "y", text: () => "S&P 500", dy: -7, textAnchor: "end", className: "pg-ref-label" })
+    );
+  }
+  series.forEach((s, i) => {
+    const d = rows.filter(r => r.model === s);
+    if (d[0].seeds > 1) marks.push(Plot.areaY(d, { x: "factors", y1: "low", y2: "high", curve: "linear", className: `pg-band-s${i}` }));
+  });
+  [...series].reverse().forEach((s) => {
+    const i = series.indexOf(s);
+    const d = rows.filter(r => r.model === s);
+    marks.push(
+      Plot.lineY(d, { x: "factors", y: "mean", strokeWidth: 2, className: `pg-line-s${i}` }),
+      Plot.dot(d, { x: "factors", y: "mean", r: 3.5, className: `pg-dot-s${i}` })
+    );
+  });
+  marks.push(Plot.tip(rows, Plot.pointer({
+    x: "factors", y: "mean",
+    title: d => `${d.model}\nH = ${d.factors}: ${fmt(metric, d.mean)}` +
+      (d.seeds > 1 ? `\nacross seeds: ${fmt(metric, d.low)} to ${fmt(metric, d.high)}` : "")
+  })));
+  return Plot.plot({
+    width: panelWidth, height: 280,
+    marginLeft: 44, marginRight: 12, marginTop: 28, marginBottom: 40,
+    style: { background: "transparent", color: "currentColor", fontFamily: "Inter, sans-serif", fontSize: "12px" },
+    x: { label: "Number of factors H", ticks: [1, 2, 3, 4, 5, 6, 7, 8], tickFormat: "d", labelAnchor: "center", labelOffset: 34 },
+    y: { label: metric, labelAnchor: "top", labelArrow: "none", nice: true },
+    marks
+  });
+}
+```
+
+```{ojs}
+//| echo: false
+chart = {
+  // Drawn at a fixed size and scaled by CSS to fill each grid column.
+  const panelWidth = 420;
+  const legend = html`<div class="pg-legend">${series.map((s, i) =>
+    html`<span class="pg-key"><span class="pg-swatch pg-s${i}"></span>${s}</span>`)}</div>`;
+  const rows = series.flatMap(s => [1, 2, 3, 4, 5, 6, 7, 8].map(h => {
+    const get = m => results.find(d => d.model === s && d.factors === h && d.metric === m).mean;
+    return html`<tr><td>${s}</td><td>${h}</td><td>${get("Rank correlation (%)").toFixed(2)}</td><td>${get("Tangency Sharpe ratio").toFixed(2)}</td></tr>`;
+  }));
+  return html`<figure class="pg-chart">
+    ${legend}
+    <div class="pg-panels">
+      ${panel("Rank correlation (%)", panelWidth)}
+      ${panel("Tangency Sharpe ratio", panelWidth)}
+    </div>
+    <figcaption>Out-of-sample results by number of factors, 1995–2024, with models estimated on 1960–1989 and held fixed. PanelGP lines average five optimization seeds and the bands span them; the paper uses H = 5. Data from the <a href="https://github.com/Ruglio/PanelGP" target="_blank" rel="noopener">replication package</a>.</figcaption>
+    <details class="pg-table"><summary>Show the data</summary>
+      <table><thead><tr><th>Model</th><th>H</th><th>Rank correlation (%)</th><th>Tangency Sharpe ratio</th></tr></thead>
+      <tbody>${rows}</tbody></table>
+    </details>
+  </figure>`;
+}
+```

@@ -622,6 +622,165 @@ main.content .sw-section h2::before {
     grid-column: 3 / -1;
 }
 
+/* ---------- Paper pages: headline numbers and results chart ---------- */
+
+.pg-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: var(--sw-gutter);
+    border-top: var(--sw-rule) solid var(--sw-ink);
+    margin: 1.5rem 0 2rem;
+}
+
+.pg-stat {
+    padding-top: 0.75rem;
+}
+
+.pg-stat p {
+    margin: 0;
+}
+
+.pg-stat-value {
+    display: block;
+    font-family: var(--sw-display);
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.pg-stat:first-child .pg-stat-value {
+    color: var(--sw-red);
+}
+
+.pg-stat-label {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.88rem;
+    line-height: 1.35;
+    color: var(--sw-muted);
+}
+
+/* Series colours: emphasis on PanelGP (red), context in two grays.
+   Set with CSS so they follow the light/dark toggle without re-rendering. */
+.pg-chart {
+    --pg-s0: var(--sw-red);
+    --pg-s1: #555555;
+    --pg-s2: #a3a3a3;
+    margin: 0;
+}
+
+body.quarto-dark .pg-chart {
+    --pg-s1: #9a9a9a;
+    --pg-s2: #5a5a5a;
+}
+
+/* Plot allows one class per mark, hence the combined names. */
+.pg-chart .pg-line-s0, .pg-chart .pg-line-s0 * { stroke: var(--pg-s0); }
+.pg-chart .pg-line-s1, .pg-chart .pg-line-s1 * { stroke: var(--pg-s1); }
+.pg-chart .pg-line-s2, .pg-chart .pg-line-s2 * { stroke: var(--pg-s2); }
+
+/* Dots get a 2px surface ring so overlapping markers stay separate. */
+.pg-chart [class^="pg-dot-s"], .pg-chart [class^="pg-dot-s"] * { stroke: var(--sw-paper); stroke-width: 2px; }
+.pg-chart .pg-dot-s0, .pg-chart .pg-dot-s0 * { fill: var(--pg-s0); }
+.pg-chart .pg-dot-s1, .pg-chart .pg-dot-s1 * { fill: var(--pg-s1); }
+.pg-chart .pg-dot-s2, .pg-chart .pg-dot-s2 * { fill: var(--pg-s2); }
+
+.pg-chart .pg-band-s0, .pg-chart .pg-band-s0 * { fill: var(--pg-s0); fill-opacity: 0.12; }
+.pg-chart .pg-band-s1, .pg-chart .pg-band-s1 * { fill: var(--pg-s1); fill-opacity: 0.12; }
+
+/* Wide display equations scroll inside the column instead of the page. */
+.katex-display {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.25rem 0;
+}
+
+/* Citation BibTeX box: readable in both modes. */
+.quarto-appendix-bibtex,
+.quarto-appendix-bibtex code {
+    color: var(--sw-ink);
+    background: var(--sw-surface);
+    border: none;
+}
+
+.pg-chart .pg-ref, .pg-chart .pg-ref * { stroke: var(--sw-muted); }
+.pg-chart .pg-ref-label, .pg-chart .pg-ref-label * { fill: var(--sw-muted); }
+
+.pg-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.5rem;
+    font-size: 0.88rem;
+    margin-bottom: 0.75rem;
+}
+
+.pg-key {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.pg-swatch {
+    width: 1.1rem;
+    height: 2px;
+    background: var(--pg-s0);
+}
+
+.pg-swatch.pg-s1 { background: var(--pg-s1); }
+.pg-swatch.pg-s2 { background: var(--pg-s2); }
+
+.pg-panels {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.pg-panels svg {
+    width: 100%;
+    height: auto;
+    max-width: none;
+}
+
+@media (max-width: 767.98px) {
+    .pg-panels {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.pg-chart figcaption {
+    margin-top: 0.75rem;
+}
+
+.pg-table {
+    margin-top: 0.75rem;
+    font-size: 0.88rem;
+}
+
+.pg-table summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.pg-table table {
+    margin-top: 0.5rem;
+    width: 100%;
+    font-variant-numeric: tabular-nums;
+}
+
+.pg-table td, .pg-table th {
+    padding: 0.2rem 0.75rem 0.2rem 0;
+    border-bottom: 1px solid var(--sw-hairline);
+    text-align: left;
+}
+
+@media (max-width: 767.98px) {
+    .pg-stats {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
 /* ---------- Blog listing ---------- */
 
 .quarto-listing-default {

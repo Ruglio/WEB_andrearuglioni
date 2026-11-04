@@ -11,10 +11,10 @@
       <% if (item.subtitle) { %><div class="pub-venue"><%= String(item.subtitle || "").replace(/ -- /g, " – ") %></div><% } %>
       <% if (item.pdf || item.code || item.slides || item.poster) { %>
       <div class="pub-links">
-        <% if (item.pdf) { %><a href="<%= item.pdf %>">PDF</a><% } %>
-        <% if (item.code) { %><a href="<%= item.code %>">Code</a><% } %>
-        <% if (item.slides) { %><a href="<%= item.slides %>">Slides</a><% } %>
-        <% if (item.poster) { %><a href="<%= item.poster %>">Poster</a><% } %>
+        <% if (item.pdf) { %><a href="<%= item.pdf %>" target="_blank" rel="noopener">PDF</a><% } %>
+        <% if (item.code) { %><a href="<%= item.code %>" target="_blank" rel="noopener">Code</a><% } %>
+        <% if (item.slides) { %><a href="<%= item.slides %>" target="_blank" rel="noopener">Slides</a><% } %>
+        <% if (item.poster) { %><a href="<%= item.poster %>" target="_blank" rel="noopener">Poster</a><% } %>
       </div>
       <% } %>
     </div>

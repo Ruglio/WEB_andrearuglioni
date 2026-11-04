@@ -23,7 +23,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -86,10 +119,55 @@ cookieconsent.run({
 });
 </script> 
   
+<script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&amp;family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../assets/styles/styles.css">
 <meta name="citation_title" content="PanelGP: A Probabilistic Factor Model for Asset-Return Panels">
@@ -152,7 +230,7 @@ cookieconsent.run({
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">PanelGP: A Probabilistic Factor Model for Asset-Return Panels</h1>
-            <p class="subtitle lead">Working paper – arXiv:2611.04040</p>
+            <p class="subtitle lead">Working paper</p>
                   <div>
         <div class="description">
           A conditional factor model with Gaussian-process loadings and factors that forecasts both expected returns and their covariance matrix from one estimated model.
@@ -207,18 +285,161 @@ cookieconsent.run({
 </section>
 <section id="in-brief" class="level2">
 <h2 class="anchored" data-anchor-id="in-brief">In brief</h2>
-<ul>
-<li><strong>Model.</strong> Firm characteristics drive the factor loadings and economic conditions drive the expected factors, both through Gaussian-process priors. With linear kernels the model reduces to IPCA; other kernels give smooth nonlinear maps.</li>
-<li><strong>Risk as well as returns.</strong> Separate loading and factor innovations split idiosyncratic from systematic risk, so the same fitted model delivers expected returns and a full covariance matrix.</li>
-<li><strong>Closed forms.</strong> Each predicted return is bilinear in a Gaussian state, so the predictive covariance and the cumulants of any portfolio are available in closed form.</li>
-<li><strong>Evidence.</strong> On S&amp;P 500 constituents over 1995–2024, nonlinear loadings rank stocks better than affine ones, and the portfolios beat IPCA on Sharpe ratio, also after trading costs.</li>
-</ul>
+<section id="the-model" class="level3">
+<h3 class="anchored" data-anchor-id="the-model">The model</h3>
+<p>Asset <span class="math inline">i</span> at date <span class="math inline">t</span> has characteristics <span class="math inline">x_{it} \in \mathbb{R}^P</span>, and all assets share an economic context <span class="math inline">c_t \in \mathbb{R}^Q</span>. A loading map <span class="math inline">\beta</span> sends characteristics to <span class="math inline">H</span> factor loadings, and a factor map <span class="math inline">\phi</span> sends the context to the expected factors of the next period. Realized loadings and factors deviate from these maps by Gaussian innovations,</p>
+<p><span class="math display">
+\begin{aligned}
+\tilde\beta_{it} &amp;= \beta(x_{it}) + \xi_{i,t+1}, &amp; \xi_{i,t+1} &amp;\sim \mathcal{N}(0, D_\beta), \\
+\tilde\phi_{t} &amp;= \phi(c_{t}) + \zeta_{t+1}, &amp; \zeta_{t+1} &amp;\sim \mathcal{N}(0, D_\phi),
+\end{aligned}
+</span></p>
+<p>and the excess return is bilinear in the two:</p>
+<p><span class="math display">
+r_{i,t+1} = \tilde\beta_{it}^\top \tilde\phi_t + \sigma_r\,\epsilon_{i,t+1}, \qquad \epsilon_{i,t+1} \sim \mathcal{N}(0, 1).
+</span></p>
+<p>Each component of the two maps gets an independent Gaussian-process prior, <span class="math inline">\beta_h \sim \mathcal{GP}(0, k_{\beta,h})</span> and <span class="math inline">\phi_h \sim \mathcal{GP}(0, k_{\phi,h})</span>. Affine loading kernels with constant factor kernels give the structure of IPCA; RBF kernels allow nonlinear loadings and factor forecasts that depend on the context.</p>
+<p>The loading innovation is specific to each asset, while the factor innovation is common to all assets at a date. This splits risk into a systematic and an idiosyncratic part, so the same fitted model forecasts expected returns and a full covariance matrix:</p>
+<p><span class="math display">
+\begin{aligned}
+\mathbb{E}(r_{i,t+1}) &amp;= \beta(x_{it})^\top \phi(c_t), \\
+\operatorname{Var}(r_{i,t+1}) &amp;=
+\underbrace{\beta(x_{it})^\top D_\phi\, \beta(x_{it})}_{\text{systematic}}
++ \underbrace{\phi(c_t)^\top D_\beta\, \phi(c_t) + \operatorname{tr}(D_\beta D_\phi) + \sigma_r^2}_{\text{idiosyncratic}},
+\end{aligned}
+</span></p>
+<p>given the two maps, with covariance <span class="math inline">\beta(x_{it})^\top D_\phi\, \beta(x_{jt})</span> between two assets. Estimation uses sparse variational inference, and the predictive covariance and the cumulants of any portfolio come out in closed form.</p>
 </section>
-<section id="data-and-replication" class="level2">
-<h2 class="anchored" data-anchor-id="data-and-replication">Data and replication</h2>
-<p>The empirical application uses monthly data on S&amp;P 500 constituents: firm characteristics from Jensen, Kelly and Pedersen (2023), and macro-financial predictors from Goyal, Welch and Zafirov (2024). The <a href="https://github.com/Ruglio/PanelGP">replication package</a> (MIT licence) reproduces every table, figure and number of the paper at three levels: tables and figures from the included results in a few minutes on any computer, the simulation study without any data, and the full empirical application with WRDS access and a GPU.</p>
+<section id="results" class="level3">
+<h3 class="anchored" data-anchor-id="results">Results</h3>
+<p>The models are estimated on 1960–1989 and evaluated out of sample on S&amp;P 500 constituents from 1995 to 2024. With five factors:</p>
+<div class="pg-stats">
+<div class="pg-stat">
+<p><span class="pg-stat-value">1.55</span> <span class="pg-stat-label">Tangency-portfolio Sharpe ratio, against 1.17 for IPCA</span></p>
+</div>
+<div class="pg-stat">
+<p><span class="pg-stat-value">4.5%</span> <span class="pg-stat-label">Rank correlation between predicted and realized returns, against 3.1%</span></p>
+</div>
+<div class="pg-stat">
+<p><span class="pg-stat-value">14.3%</span> <span class="pg-stat-label">Volatility of the minimum-variance portfolio, against 16.3%</span></p>
+</div>
+</div>
+<div class="cell hidden">
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="96" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 95;"><span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>Plot <span class="op">=</span> <span class="im">import</span>(<span class="st">"https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/+esm"</span>)</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"results-by-factors.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>series <span class="op">=</span> [</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>  <span class="st">"PanelGP, RBF loadings and factors"</span><span class="op">,</span></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>  <span class="st">"PanelGP, affine loadings (IPCA-like)"</span><span class="op">,</span></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>  <span class="st">"IPCA with intercept"</span></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>fmt <span class="op">=</span> (metric<span class="op">,</span> v) <span class="kw">=&gt;</span> metric<span class="op">.</span><span class="fu">startsWith</span>(<span class="st">"Rank"</span>) <span class="op">?</span> <span class="vs">`</span><span class="sc">${</span>v<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="vs">%`</span> <span class="op">:</span> v<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">panel</span>(metric<span class="op">,</span> panelWidth) {</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> rows <span class="op">=</span> results<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">metric</span> <span class="op">===</span> metric)<span class="op">;</span></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> marks <span class="op">=</span> [Plot<span class="op">.</span><span class="fu">gridY</span>({ <span class="dt">stroke</span><span class="op">:</span> <span class="st">"currentColor"</span><span class="op">,</span> <span class="dt">strokeOpacity</span><span class="op">:</span> <span class="fl">0.12</span> })]<span class="op">;</span></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (metric<span class="op">.</span><span class="fu">startsWith</span>(<span class="st">"Tangency"</span>)) {</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>    marks<span class="op">.</span><span class="fu">push</span>(</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="fl">0.62</span>]<span class="op">,</span> { <span class="dt">className</span><span class="op">:</span> <span class="st">"pg-ref"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">1</span> })<span class="op">,</span></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">text</span>([{ <span class="dt">x</span><span class="op">:</span> <span class="dv">8</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="fl">0.62</span> }]<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> () <span class="kw">=&gt;</span> <span class="st">"S&amp;P 500"</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="op">-</span><span class="dv">7</span><span class="op">,</span> <span class="dt">textAnchor</span><span class="op">:</span> <span class="st">"end"</span><span class="op">,</span> <span class="dt">className</span><span class="op">:</span> <span class="st">"pg-ref-label"</span> })</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>    )<span class="op">;</span></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>  series<span class="op">.</span><span class="fu">forEach</span>((s<span class="op">,</span> i) <span class="kw">=&gt;</span> {</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> d <span class="op">=</span> rows<span class="op">.</span><span class="fu">filter</span>(r <span class="kw">=&gt;</span> r<span class="op">.</span><span class="at">model</span> <span class="op">===</span> s)<span class="op">;</span></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (d[<span class="dv">0</span>]<span class="op">.</span><span class="at">seeds</span> <span class="op">&gt;</span> <span class="dv">1</span>) marks<span class="op">.</span><span class="fu">push</span>(Plot<span class="op">.</span><span class="fu">areaY</span>(d<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> <span class="st">"factors"</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> <span class="st">"low"</span><span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> <span class="st">"high"</span><span class="op">,</span> <span class="dt">curve</span><span class="op">:</span> <span class="st">"linear"</span><span class="op">,</span> <span class="dt">className</span><span class="op">:</span> <span class="vs">`pg-band-s</span><span class="sc">${</span>i<span class="sc">}</span><span class="vs">`</span> }))<span class="op">;</span></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>  [<span class="op">...</span>series]<span class="op">.</span><span class="fu">reverse</span>()<span class="op">.</span><span class="fu">forEach</span>((s) <span class="kw">=&gt;</span> {</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> i <span class="op">=</span> series<span class="op">.</span><span class="fu">indexOf</span>(s)<span class="op">;</span></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> d <span class="op">=</span> rows<span class="op">.</span><span class="fu">filter</span>(r <span class="kw">=&gt;</span> r<span class="op">.</span><span class="at">model</span> <span class="op">===</span> s)<span class="op">;</span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>    marks<span class="op">.</span><span class="fu">push</span>(</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">lineY</span>(d<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> <span class="st">"factors"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"mean"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">className</span><span class="op">:</span> <span class="vs">`pg-line-s</span><span class="sc">${</span>i<span class="sc">}</span><span class="vs">`</span> })<span class="op">,</span></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">dot</span>(d<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> <span class="st">"factors"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"mean"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="fl">3.5</span><span class="op">,</span> <span class="dt">className</span><span class="op">:</span> <span class="vs">`pg-dot-s</span><span class="sc">${</span>i<span class="sc">}</span><span class="vs">`</span> })</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>    )<span class="op">;</span></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>  marks<span class="op">.</span><span class="fu">push</span>(Plot<span class="op">.</span><span class="fu">tip</span>(rows<span class="op">,</span> Plot<span class="op">.</span><span class="fu">pointer</span>({</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>    <span class="dt">x</span><span class="op">:</span> <span class="st">"factors"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"mean"</span><span class="op">,</span></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="vs">`</span><span class="sc">${</span>d<span class="op">.</span><span class="at">model</span><span class="sc">}\n</span><span class="vs">H = </span><span class="sc">${</span>d<span class="op">.</span><span class="at">factors</span><span class="sc">}</span><span class="vs">: </span><span class="sc">${</span><span class="fu">fmt</span>(metric<span class="op">,</span> d<span class="op">.</span><span class="at">mean</span>)<span class="sc">}</span><span class="vs">`</span> <span class="op">+</span></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>      (d<span class="op">.</span><span class="at">seeds</span> <span class="op">&gt;</span> <span class="dv">1</span> <span class="op">?</span> <span class="vs">`</span><span class="sc">\n</span><span class="vs">across seeds: </span><span class="sc">${</span><span class="fu">fmt</span>(metric<span class="op">,</span> d<span class="op">.</span><span class="at">low</span>)<span class="sc">}</span><span class="vs"> to </span><span class="sc">${</span><span class="fu">fmt</span>(metric<span class="op">,</span> d<span class="op">.</span><span class="at">high</span>)<span class="sc">}</span><span class="vs">`</span> <span class="op">:</span> <span class="st">""</span>)</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>  })))<span class="op">;</span></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>    <span class="dt">width</span><span class="op">:</span> panelWidth<span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="dv">280</span><span class="op">,</span></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>    <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">44</span><span class="op">,</span> <span class="dt">marginRight</span><span class="op">:</span> <span class="dv">12</span><span class="op">,</span> <span class="dt">marginTop</span><span class="op">:</span> <span class="dv">28</span><span class="op">,</span> <span class="dt">marginBottom</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>    <span class="dt">style</span><span class="op">:</span> { <span class="dt">background</span><span class="op">:</span> <span class="st">"transparent"</span><span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">"currentColor"</span><span class="op">,</span> <span class="dt">fontFamily</span><span class="op">:</span> <span class="st">"Inter, sans-serif"</span><span class="op">,</span> <span class="dt">fontSize</span><span class="op">:</span> <span class="st">"12px"</span> }<span class="op">,</span></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>    <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Number of factors H"</span><span class="op">,</span> <span class="dt">ticks</span><span class="op">:</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span><span class="op">,</span> <span class="dv">7</span><span class="op">,</span> <span class="dv">8</span>]<span class="op">,</span> <span class="dt">tickFormat</span><span class="op">:</span> <span class="st">"d"</span><span class="op">,</span> <span class="dt">labelAnchor</span><span class="op">:</span> <span class="st">"center"</span><span class="op">,</span> <span class="dt">labelOffset</span><span class="op">:</span> <span class="dv">34</span> }<span class="op">,</span></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>    <span class="dt">y</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> metric<span class="op">,</span> <span class="dt">labelAnchor</span><span class="op">:</span> <span class="st">"top"</span><span class="op">,</span> <span class="dt">labelArrow</span><span class="op">:</span> <span class="st">"none"</span><span class="op">,</span> <span class="dt">nice</span><span class="op">:</span> <span class="kw">true</span> }<span class="op">,</span></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    marks</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display hidden">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display hidden">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="146" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 145;"><span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>chart <span class="op">=</span> {</span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Drawn at a fixed size and scaled by CSS to fill each grid column.</span></span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> panelWidth <span class="op">=</span> <span class="dv">420</span><span class="op">;</span></span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> legend <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div class="pg-legend"&gt;</span><span class="sc">${</span>series<span class="op">.</span><span class="fu">map</span>((s<span class="op">,</span> i) <span class="kw">=&gt;</span></span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>    <span class="fu">html</span><span class="vs">`&lt;span class="pg-key"&gt;&lt;span class="pg-swatch pg-s</span><span class="sc">${</span>i<span class="sc">}</span><span class="vs">"&gt;&lt;/span&gt;</span><span class="sc">${</span>s<span class="sc">}</span><span class="vs">&lt;/span&gt;`</span>)<span class="sc">}</span><span class="vs">&lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> rows <span class="op">=</span> series<span class="op">.</span><span class="fu">flatMap</span>(s <span class="kw">=&gt;</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span><span class="op">,</span> <span class="dv">7</span><span class="op">,</span> <span class="dv">8</span>]<span class="op">.</span><span class="fu">map</span>(h <span class="kw">=&gt;</span> {</span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> <span class="kw">get</span> <span class="op">=</span> m <span class="kw">=&gt;</span> results<span class="op">.</span><span class="fu">find</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">model</span> <span class="op">===</span> s <span class="op">&amp;&amp;</span> d<span class="op">.</span><span class="at">factors</span> <span class="op">===</span> h <span class="op">&amp;&amp;</span> d<span class="op">.</span><span class="at">metric</span> <span class="op">===</span> m)<span class="op">.</span><span class="at">mean</span><span class="op">;</span></span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;tr&gt;&lt;td&gt;</span><span class="sc">${</span>s<span class="sc">}</span><span class="vs">&lt;/td&gt;&lt;td&gt;</span><span class="sc">${</span>h<span class="sc">}</span><span class="vs">&lt;/td&gt;&lt;td&gt;</span><span class="sc">${</span><span class="kw">get</span>(<span class="st">"Rank correlation (%)"</span>)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="vs">&lt;/td&gt;&lt;td&gt;</span><span class="sc">${</span><span class="kw">get</span>(<span class="st">"Tangency Sharpe ratio"</span>)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="vs">&lt;/td&gt;&lt;/tr&gt;`</span><span class="op">;</span></span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>  }))<span class="op">;</span></span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;figure class="pg-chart"&gt;</span></span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a><span class="vs">    </span><span class="sc">${</span>legend<span class="sc">}</span></span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;div class="pg-panels"&gt;</span></span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a><span class="vs">      </span><span class="sc">${</span><span class="fu">panel</span>(<span class="st">"Rank correlation (%)"</span><span class="op">,</span> panelWidth)<span class="sc">}</span></span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a><span class="vs">      </span><span class="sc">${</span><span class="fu">panel</span>(<span class="st">"Tangency Sharpe ratio"</span><span class="op">,</span> panelWidth)<span class="sc">}</span></span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/div&gt;</span></span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;figcaption&gt;Out-of-sample results by number of factors, 1995–2024, with models estimated on 1960–1989 and held fixed. PanelGP lines average five optimization seeds and the bands span them; the paper uses H = 5. Data from the &lt;a href="https://github.com/Ruglio/PanelGP" target="_blank" rel="noopener"&gt;replication package&lt;/a&gt;.&lt;/figcaption&gt;</span></span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;details class="pg-table"&gt;&lt;summary&gt;Show the data&lt;/summary&gt;</span></span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Model&lt;/th&gt;&lt;th&gt;H&lt;/th&gt;&lt;th&gt;Rank correlation (%)&lt;/th&gt;&lt;th&gt;Tangency Sharpe ratio&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;</span></span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;tbody&gt;</span><span class="sc">${</span>rows<span class="sc">}</span><span class="vs">&lt;/tbody&gt;&lt;/table&gt;</span></span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/details&gt;</span></span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/figure&gt;`</span><span class="op">;</span></span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@misc{ruglioni2026,
@@ -234,6 +455,17 @@ Ruglioni, Andrea, and Damir Filipovic. 2026. <span>“PanelGP: A
 Probabilistic Factor Model for Asset-Return Panels.”</span> <em>arXiv
 Preprint arXiv:2611.04040</em>. <a href="https://arxiv.org/abs/2611.04040">https://arxiv.org/abs/2611.04040</a>.
 </div></div></section></div></main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlBsb3QgPSBpbXBvcnQoXCJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL0BvYnNlcnZhYmxlaHEvcGxvdEAwLjYuMTYvK2VzbVwiKVxuXG5yZXN1bHRzID0gRmlsZUF0dGFjaG1lbnQoXCJyZXN1bHRzLWJ5LWZhY3RvcnMuY3N2XCIpLmNzdih7IHR5cGVkOiB0cnVlIH0pXG5cbnNlcmllcyA9IFtcbiAgXCJQYW5lbEdQLCBSQkYgbG9hZGluZ3MgYW5kIGZhY3RvcnNcIixcbiAgXCJQYW5lbEdQLCBhZmZpbmUgbG9hZGluZ3MgKElQQ0EtbGlrZSlcIixcbiAgXCJJUENBIHdpdGggaW50ZXJjZXB0XCJcbl1cblxuZm10ID0gKG1ldHJpYywgdikgPT4gbWV0cmljLnN0YXJ0c1dpdGgoXCJSYW5rXCIpID8gYCR7di50b0ZpeGVkKDIpfSVgIDogdi50b0ZpeGVkKDIpXG5cbmZ1bmN0aW9uIHBhbmVsKG1ldHJpYywgcGFuZWxXaWR0aCkge1xuICBjb25zdCByb3dzID0gcmVzdWx0cy5maWx0ZXIoZCA9PiBkLm1ldHJpYyA9PT0gbWV0cmljKTtcbiAgY29uc3QgbWFya3MgPSBbUGxvdC5ncmlkWSh7IHN0cm9rZTogXCJjdXJyZW50Q29sb3JcIiwgc3Ryb2tlT3BhY2l0eTogMC4xMiB9KV07XG4gIGlmIChtZXRyaWMuc3RhcnRzV2l0aChcIlRhbmdlbmN5XCIpKSB7XG4gICAgbWFya3MucHVzaChcbiAgICAgIFBsb3QucnVsZVkoWzAuNjJdLCB7IGNsYXNzTmFtZTogXCJwZy1yZWZcIiwgc3Ryb2tlV2lkdGg6IDEgfSksXG4gICAgICBQbG90LnRleHQoW3sgeDogOCwgeTogMC42MiB9XSwgeyB4OiBcInhcIiwgeTogXCJ5XCIsIHRleHQ6ICgpID0+IFwiUyZQIDUwMFwiLCBkeTogLTcsIHRleHRBbmNob3I6IFwiZW5kXCIsIGNsYXNzTmFtZTogXCJwZy1yZWYtbGFiZWxcIiB9KVxuICAgICk7XG4gIH1cbiAgc2VyaWVzLmZvckVhY2goKHMsIGkpID0+IHtcbiAgICBjb25zdCBkID0gcm93cy5maWx0ZXIociA9PiByLm1vZGVsID09PSBzKTtcbiAgICBpZiAoZFswXS5zZWVkcyA+IDEpIG1hcmtzLnB1c2goUGxvdC5hcmVhWShkLCB7IHg6IFwiZmFjdG9yc1wiLCB5MTogXCJsb3dcIiwgeTI6IFwiaGlnaFwiLCBjdXJ2ZTogXCJsaW5lYXJcIiwgY2xhc3NOYW1lOiBgcGctYmFuZC1zJHtpfWAgfSkpO1xuICB9KTtcbiAgWy4uLnNlcmllc10ucmV2ZXJzZSgpLmZvckVhY2goKHMpID0+IHtcbiAgICBjb25zdCBpID0gc2VyaWVzLmluZGV4T2Yocyk7XG4gICAgY29uc3QgZCA9IHJvd3MuZmlsdGVyKHIgPT4gci5tb2RlbCA9PT0gcyk7XG4gICAgbWFya3MucHVzaChcbiAgICAgIFBsb3QubGluZVkoZCwgeyB4OiBcImZhY3RvcnNcIiwgeTogXCJtZWFuXCIsIHN0cm9rZVdpZHRoOiAyLCBjbGFzc05hbWU6IGBwZy1saW5lLXMke2l9YCB9KSxcbiAgICAgIFBsb3QuZG90KGQsIHsgeDogXCJmYWN0b3JzXCIsIHk6IFwibWVhblwiLCByOiAzLjUsIGNsYXNzTmFtZTogYHBnLWRvdC1zJHtpfWAgfSlcbiAgICApO1xuICB9KTtcbiAgbWFya3MucHVzaChQbG90LnRpcChyb3dzLCBQbG90LnBvaW50ZXIoe1xuICAgIHg6IFwiZmFjdG9yc1wiLCB5OiBcIm1lYW5cIixcbiAgICB0aXRsZTogZCA9PiBgJHtkLm1vZGVsfVxcbkggPSAke2QuZmFjdG9yc306ICR7Zm10KG1ldHJpYywgZC5tZWFuKX1gICtcbiAgICAgIChkLnNlZWRzID4gMSA/IGBcXG5hY3Jvc3Mgc2VlZHM6ICR7Zm10KG1ldHJpYywgZC5sb3cpfSB0byAke2ZtdChtZXRyaWMsIGQuaGlnaCl9YCA6IFwiXCIpXG4gIH0pKSk7XG4gIHJldHVybiBQbG90LnBsb3Qoe1xuICAgIHdpZHRoOiBwYW5lbFdpZHRoLCBoZWlnaHQ6IDI4MCxcbiAgICBtYXJnaW5MZWZ0OiA0NCwgbWFyZ2luUmlnaHQ6IDEyLCBtYXJnaW5Ub3A6IDI4LCBtYXJnaW5Cb3R0b206IDQwLFxuICAgIHN0eWxlOiB7IGJhY2tncm91bmQ6IFwidHJhbnNwYXJlbnRcIiwgY29sb3I6IFwiY3VycmVudENvbG9yXCIsIGZvbnRGYW1pbHk6IFwiSW50ZXIsIHNhbnMtc2VyaWZcIiwgZm9udFNpemU6IFwiMTJweFwiIH0sXG4gICAgeDogeyBsYWJlbDogXCJOdW1iZXIgb2YgZmFjdG9ycyBIXCIsIHRpY2tzOiBbMSwgMiwgMywgNCwgNSwgNiwgNywgOF0sIHRpY2tGb3JtYXQ6IFwiZFwiLCBsYWJlbEFuY2hvcjogXCJjZW50ZXJcIiwgbGFiZWxPZmZzZXQ6IDM0IH0sXG4gICAgeTogeyBsYWJlbDogbWV0cmljLCBsYWJlbEFuY2hvcjogXCJ0b3BcIiwgbGFiZWxBcnJvdzogXCJub25lXCIsIG5pY2U6IHRydWUgfSxcbiAgICBtYXJrc1xuICB9KTtcbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImNoYXJ0ID0ge1xuICAvLyBEcmF3biBhdCBhIGZpeGVkIHNpemUgYW5kIHNjYWxlZCBieSBDU1MgdG8gZmlsbCBlYWNoIGdyaWQgY29sdW1uLlxuICBjb25zdCBwYW5lbFdpZHRoID0gNDIwO1xuICBjb25zdCBsZWdlbmQgPSBodG1sYDxkaXYgY2xhc3M9XCJwZy1sZWdlbmRcIj4ke3Nlcmllcy5tYXAoKHMsIGkpID0+XG4gICAgaHRtbGA8c3BhbiBjbGFzcz1cInBnLWtleVwiPjxzcGFuIGNsYXNzPVwicGctc3dhdGNoIHBnLXMke2l9XCI+PC9zcGFuPiR7c308L3NwYW4+YCl9PC9kaXY+YDtcbiAgY29uc3Qgcm93cyA9IHNlcmllcy5mbGF0TWFwKHMgPT4gWzEsIDIsIDMsIDQsIDUsIDYsIDcsIDhdLm1hcChoID0+IHtcbiAgICBjb25zdCBnZXQgPSBtID0+IHJlc3VsdHMuZmluZChkID0+IGQubW9kZWwgPT09IHMgJiYgZC5mYWN0b3JzID09PSBoICYmIGQubWV0cmljID09PSBtKS5tZWFuO1xuICAgIHJldHVybiBodG1sYDx0cj48dGQ+JHtzfTwvdGQ+PHRkPiR7aH08L3RkPjx0ZD4ke2dldChcIlJhbmsgY29ycmVsYXRpb24gKCUpXCIpLnRvRml4ZWQoMil9PC90ZD48dGQ+JHtnZXQoXCJUYW5nZW5jeSBTaGFycGUgcmF0aW9cIikudG9GaXhlZCgyKX08L3RkPjwvdHI+YDtcbiAgfSkpO1xuICByZXR1cm4gaHRtbGA8ZmlndXJlIGNsYXNzPVwicGctY2hhcnRcIj5cbiAgICAke2xlZ2VuZH1cbiAgICA8ZGl2IGNsYXNzPVwicGctcGFuZWxzXCI+XG4gICAgICAke3BhbmVsKFwiUmFuayBjb3JyZWxhdGlvbiAoJSlcIiwgcGFuZWxXaWR0aCl9XG4gICAgICAke3BhbmVsKFwiVGFuZ2VuY3kgU2hhcnBlIHJhdGlvXCIsIHBhbmVsV2lkdGgpfVxuICAgIDwvZGl2PlxuICAgIDxmaWdjYXB0aW9uPk91dC1vZi1zYW1wbGUgcmVzdWx0cyBieSBudW1iZXIgb2YgZmFjdG9ycywgMTk5NeKAkzIwMjQsIHdpdGggbW9kZWxzIGVzdGltYXRlZCBvbiAxOTYw4oCTMTk4OSBhbmQgaGVsZCBmaXhlZC4gUGFuZWxHUCBsaW5lcyBhdmVyYWdlIGZpdmUgb3B0aW1pemF0aW9uIHNlZWRzIGFuZCB0aGUgYmFuZHMgc3BhbiB0aGVtOyB0aGUgcGFwZXIgdXNlcyBIID0gNS4gRGF0YSBmcm9tIHRoZSA8YSBocmVmPVwiaHR0cHM6Ly9naXRodWIuY29tL1J1Z2xpby9QYW5lbEdQXCIgdGFyZ2V0PVwiX2JsYW5rXCIgcmVsPVwibm9vcGVuZXJcIj5yZXBsaWNhdGlvbiBwYWNrYWdlPC9hPi48L2ZpZ2NhcHRpb24+XG4gICAgPGRldGFpbHMgY2xhc3M9XCJwZy10YWJsZVwiPjxzdW1tYXJ5PlNob3cgdGhlIGRhdGE8L3N1bW1hcnk+XG4gICAgICA8dGFibGU+PHRoZWFkPjx0cj48dGg+TW9kZWw8L3RoPjx0aD5IPC90aD48dGg+UmFuayBjb3JyZWxhdGlvbiAoJSk8L3RoPjx0aD5UYW5nZW5jeSBTaGFycGUgcmF0aW88L3RoPjwvdHI+PC90aGVhZD5cbiAgICAgIDx0Ym9keT4ke3Jvd3N9PC90Ym9keT48L3RhYmxlPlxuICAgIDwvZGV0YWlscz5cbiAgPC9maWd1cmU+YDtcbn1cbiJ9XX0=
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../publications/panelgp";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "../..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -484,6 +716,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

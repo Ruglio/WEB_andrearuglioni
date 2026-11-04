@@ -69,6 +69,7 @@ format:
     code-link: true
     lightbox: true
     html-math-method: plain
+    link-external-newwindow: true
     include-in-header:
       text: |
         <link rel="preconnect" href="https://fonts.googleapis.com">
