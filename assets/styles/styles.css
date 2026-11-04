@@ -622,45 +622,7 @@ main.content .sw-section h2::before {
     grid-column: 3 / -1;
 }
 
-/* ---------- Paper pages: headline numbers and results chart ---------- */
-
-.pg-stats {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: var(--sw-gutter);
-    border-top: var(--sw-rule) solid var(--sw-ink);
-    margin: 1.5rem 0 2rem;
-}
-
-.pg-stat {
-    padding-top: 0.75rem;
-}
-
-.pg-stat p {
-    margin: 0;
-}
-
-.pg-stat-value {
-    display: block;
-    font-family: var(--sw-display);
-    font-size: 2.6rem;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    line-height: 1;
-    font-variant-numeric: tabular-nums;
-}
-
-.pg-stat:first-child .pg-stat-value {
-    color: var(--sw-red);
-}
-
-.pg-stat-label {
-    display: block;
-    margin-top: 0.5rem;
-    font-size: 0.88rem;
-    line-height: 1.35;
-    color: var(--sw-muted);
-}
+/* ---------- Paper pages: results chart ---------- */
 
 /* Series colours: emphasis on PanelGP (red), context in two grays.
    Set with CSS so they follow the light/dark toggle without re-rendering. */
@@ -773,12 +735,6 @@ body.quarto-dark .pg-chart {
     padding: 0.2rem 0.75rem 0.2rem 0;
     border-bottom: 1px solid var(--sw-hairline);
     text-align: left;
-}
-
-@media (max-width: 767.98px) {
-    .pg-stats {
-        grid-template-columns: minmax(0, 1fr);
-    }
 }
 
 /* ---------- Blog listing ---------- */

@@ -58,37 +58,29 @@ $$
 
 Each component of the two maps gets an independent Gaussian-process prior, $\beta_h \sim \mathcal{GP}(0, k_{\beta,h})$ and $\phi_h \sim \mathcal{GP}(0, k_{\phi,h})$. Affine loading kernels with constant factor kernels give the structure of IPCA; RBF kernels allow nonlinear loadings and factor forecasts that depend on the context.
 
-The loading innovation is specific to each asset, while the factor innovation is common to all assets at a date. This splits risk into a systematic and an idiosyncratic part, so the same fitted model forecasts expected returns and a full covariance matrix:
+The loading innovation is specific to each asset, while the factor innovation is common to all assets at a date, which separates idiosyncratic from systematic risk. The model is estimated by sparse variational inference.
+
+### The predictive distribution
+
+For a new panel of $J$ returns, stack its realized loadings and factors into a latent state $\chi_\star$. Its predictive distribution is Gaussian, $\chi_\star \sim \mathcal{N}(m_\star, \tilde S_\star)$, and each new return is a quadratic form in this state,
 
 $$
-\begin{aligned}
-\mathbb{E}(r_{i,t+1}) &= \beta(x_{it})^\top \phi(c_t), \\
-\operatorname{Var}(r_{i,t+1}) &=
-\underbrace{\beta(x_{it})^\top D_\phi\, \beta(x_{it})}_{\text{systematic}}
-+ \underbrace{\phi(c_t)^\top D_\beta\, \phi(c_t) + \operatorname{tr}(D_\beta D_\phi) + \sigma_r^2}_{\text{idiosyncratic}},
-\end{aligned}
+r_{\star j} = \chi_\star^\top A_j\, \chi_\star + \sigma_r\,\epsilon_{\star j},
 $$
 
-given the two maps, with covariance $\beta(x_{it})^\top D_\phi\, \beta(x_{jt})$ between two assets. Estimation uses sparse variational inference, and the predictive covariance and the cumulants of any portfolio come out in closed form.
+where $A_j$ pairs the loadings of row $j$ with the factors of its date. Writing $A(s) = \sum_{j} s_j A_j$, the joint cumulant generating function of the new panel, $K(s) = \log \mathbb{E} \exp(s^\top r_\star)$, is available in closed form:
+
+$$
+K(s) = -\tfrac{1}{2} \log \bigl| I - 2 \tilde S_\star A(s) \bigr|
++ m_\star^\top A(s) \bigl( I - 2 \tilde S_\star A(s) \bigr)^{-1} m_\star
++ \tfrac{1}{2} \sigma_r^2\, s^\top s,
+$$
+
+finite whenever $\tilde S_\star^{-1} - 2A(s)$ is positive definite. Its derivatives at zero give the predictive mean, the covariance matrix and the higher cumulants of any portfolio $w^\top r_\star$. The predictive distribution can therefore be skewed and have excess kurtosis, while its tails decay at least exponentially.
 
 ### Results
 
-The models are estimated on 1960–1989 and evaluated out of sample on S&P 500 constituents from 1995 to 2024. With five factors:
-
-::: {.pg-stats}
-::: {.pg-stat}
-[1.55]{.pg-stat-value}
-[Tangency-portfolio Sharpe ratio, against 1.17 for IPCA]{.pg-stat-label}
-:::
-::: {.pg-stat}
-[4.5%]{.pg-stat-value}
-[Rank correlation between predicted and realized returns, against 3.1%]{.pg-stat-label}
-:::
-::: {.pg-stat}
-[14.3%]{.pg-stat-value}
-[Volatility of the minimum-variance portfolio, against 16.3%]{.pg-stat-label}
-:::
-:::
+The models are estimated on 1960–1989 and evaluated out of sample on S&P 500 constituents from 1995 to 2024.
 
 ```{ojs}
 //| echo: false
