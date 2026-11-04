@@ -399,12 +399,14 @@ main.content h1.sw-name {
     white-space: nowrap;
 }
 
-.sw-link a {
+.sw-link a,
+.pub-links a {
     text-decoration: none;
 }
 
 /* North-east arrow drawn as a vector mask: the U+2197 character renders as an emoji on phones. */
-.sw-link a::after {
+.sw-link a::after,
+.pub-links a::after {
     content: "";
     display: inline-block;
     width: 0.55em;

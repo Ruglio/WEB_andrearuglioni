@@ -8,7 +8,7 @@
 
 <meta name="author" content="Andrea Ruglioni">
 <meta name="author" content="Damir Filipovic">
-<meta name="description" content="Putting Gaussian process priors on a factor model’s loading and factor maps to predict the whole cross-sectional distribution of returns, not just its mean.">
+<meta name="description" content="A conditional factor model with Gaussian-process loadings and factors that forecasts both expected returns and their covariance matrix from one estimated model.">
 
 <title>PanelGP: A Probabilistic Factor Model for Asset-Return Panels – Andrea Ruglioni</title>
 <style>
@@ -92,6 +92,16 @@ cookieconsent.run({
 
 
 <link rel="stylesheet" href="../../assets/styles/styles.css">
+<meta name="citation_title" content="PanelGP: A Probabilistic Factor Model for Asset-Return Panels">
+<meta name="citation_author" content="Andrea Ruglioni">
+<meta name="citation_author" content="Damir Filipovic">
+<meta name="citation_publication_date" content="2026-11-02">
+<meta name="citation_cover_date" content="2026-11-02">
+<meta name="citation_year" content="2026">
+<meta name="citation_online_date" content="2026-11-02">
+<meta name="citation_fulltext_html_url" content="https://arxiv.org/abs/2611.04040">
+<meta name="citation_language" content="en">
+<meta name="citation_journal_title" content="arXiv preprint arXiv:2611.04040">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -142,17 +152,17 @@ cookieconsent.run({
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">PanelGP: A Probabilistic Factor Model for Asset-Return Panels</h1>
-            <p class="subtitle lead">Working paper</p>
+            <p class="subtitle lead">Working paper – arXiv:2611.04040</p>
                   <div>
         <div class="description">
-          Putting Gaussian process priors on a factor model’s loading and factor maps to predict the whole cross-sectional distribution of returns, not just its mean.
+          A conditional factor model with Gaussian-process loadings and factors that forecasts both expected returns and their covariance matrix from one estimated model.
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">Panel factor models</div>
+                <div class="quarto-category">Conditional factor models</div>
                 <div class="quarto-category">Gaussian processes</div>
-                <div class="quarto-category">Bayesian econometrics</div>
-                <div class="quarto-category">Asset returns</div>
+                <div class="quarto-category">Variational inference</div>
+                <div class="quarto-category">Asset pricing</div>
               </div>
                   </div>
   </div>
@@ -171,7 +181,7 @@ cookieconsent.run({
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">August 2026</p>
+        <p class="date">November 2026</p>
       </div>
     </div>
     
@@ -190,14 +200,40 @@ cookieconsent.run({
 
 
 
+<p><span class="sw-link"><a href="https://arxiv.org/pdf/2611.04040">PDF</a></span> <span class="sw-link"><a href="https://github.com/Ruglio/PanelGP">Code</a></span> <span class="sw-link"><a href="https://arxiv.org/abs/2611.04040">arXiv</a></span></p>
 <section id="abstract" class="level2">
 <h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>Most factor models are graded on how well they predict average returns, but portfolio decisions really need the whole joint distribution of the return cross-section. PanelGP puts Gaussian process priors on a characteristic-driven loading map and a context-driven factor map, and carries that uncertainty forward into a future cross-section whose covariance and higher moments come out in closed form. It recovers the true model on simulated data, and on U.S. equities it improves on IPCA in mean accuracy, ranking, and Sharpe ratio.</p>
+<p>We develop PanelGP, a conditional factor model for large panels of stock returns in which firm characteristics determine the factor loadings and economic conditions determine the expected factors. Both relations are estimated nonparametrically with Gaussian-process priors. The kernel choice nests instrumented principal component analysis (IPCA) as well as smooth nonlinear maps. Asset-specific loading innovations and common factor innovations separate idiosyncratic from systematic risk, so one estimated model forecasts both expected returns and their covariance matrix. Estimation uses sparse variational inference with a joint posterior over loadings and factors. Because each predicted return is bilinear in a Gaussian state, the predictive covariance matrix and the cumulants of any portfolio have closed forms. In simulations, the estimator recovers the nonlinear maps and the variance parameters. For S&amp;P 500 constituents over 1995–2024, nonlinear loadings rank stocks better than affine loadings and improve the Gaussian log score. Relative to IPCA, the resulting portfolios have higher Sharpe ratios, also net of trading costs, and the minimum-variance portfolio has lower volatility. The predicted variances rank stocks and months by risk but are too compressed.</p>
+</section>
+<section id="in-brief" class="level2">
+<h2 class="anchored" data-anchor-id="in-brief">In brief</h2>
+<ul>
+<li><strong>Model.</strong> Firm characteristics drive the factor loadings and economic conditions drive the expected factors, both through Gaussian-process priors. With linear kernels the model reduces to IPCA; other kernels give smooth nonlinear maps.</li>
+<li><strong>Risk as well as returns.</strong> Separate loading and factor innovations split idiosyncratic from systematic risk, so the same fitted model delivers expected returns and a full covariance matrix.</li>
+<li><strong>Closed forms.</strong> Each predicted return is bilinear in a Gaussian state, so the predictive covariance and the cumulants of any portfolio are available in closed form.</li>
+<li><strong>Evidence.</strong> On S&amp;P 500 constituents over 1995–2024, nonlinear loadings rank stocks better than affine ones, and the portfolios beat IPCA on Sharpe ratio, also after trading costs.</li>
+</ul>
+</section>
+<section id="data-and-replication" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-replication">Data and replication</h2>
+<p>The empirical application uses monthly data on S&amp;P 500 constituents: firm characteristics from Jensen, Kelly and Pedersen (2023), and macro-financial predictors from Goyal, Welch and Zafirov (2024). The <a href="https://github.com/Ruglio/PanelGP">replication package</a> (MIT licence) reproduces every table, figure and number of the paper at three levels: tables and figures from the included results in a few minutes on any computer, the simulation study without any data, and the full empirical application with WRDS access and a GPU.</p>
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@misc{ruglioni2026,
+  author = {Ruglioni, Andrea and Filipovic, Damir},
+  title = {PanelGP: {A} {Probabilistic} {Factor} {Model} for
+    {Asset-Return} {Panels}},
+  date = {2026-11-02},
+  url = {https://arxiv.org/abs/2611.04040},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-ruglioni2026" class="csl-entry quarto-appendix-citeas" role="listitem">
+Ruglioni, Andrea, and Damir Filipovic. 2026. <span>“PanelGP: A
+Probabilistic Factor Model for Asset-Return Panels.”</span> <em>arXiv
+Preprint arXiv:2611.04040</em>. <a href="https://arxiv.org/abs/2611.04040">https://arxiv.org/abs/2611.04040</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

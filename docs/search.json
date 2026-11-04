@@ -74,21 +74,35 @@
     "href": "publications/panelgp/index.html",
     "title": "PanelGP: A Probabilistic Factor Model for Asset-Return Panels",
     "section": "",
-    "text": "Most factor models are graded on how well they predict average returns, but portfolio decisions really need the whole joint distribution of the return cross-section. PanelGP puts Gaussian process priors on a characteristic-driven loading map and a context-driven factor map, and carries that uncertainty forward into a future cross-section whose covariance and higher moments come out in closed form. It recovers the true model on simulated data, and on U.S. equities it improves on IPCA in mean accuracy, ranking, and Sharpe ratio."
+    "text": "PDF Code arXiv"
   },
   {
     "objectID": "publications/panelgp/index.html#abstract",
     "href": "publications/panelgp/index.html#abstract",
     "title": "PanelGP: A Probabilistic Factor Model for Asset-Return Panels",
-    "section": "",
-    "text": "Most factor models are graded on how well they predict average returns, but portfolio decisions really need the whole joint distribution of the return cross-section. PanelGP puts Gaussian process priors on a characteristic-driven loading map and a context-driven factor map, and carries that uncertainty forward into a future cross-section whose covariance and higher moments come out in closed form. It recovers the true model on simulated data, and on U.S. equities it improves on IPCA in mean accuracy, ranking, and Sharpe ratio."
+    "section": "Abstract",
+    "text": "Abstract\nWe develop PanelGP, a conditional factor model for large panels of stock returns in which firm characteristics determine the factor loadings and economic conditions determine the expected factors. Both relations are estimated nonparametrically with Gaussian-process priors. The kernel choice nests instrumented principal component analysis (IPCA) as well as smooth nonlinear maps. Asset-specific loading innovations and common factor innovations separate idiosyncratic from systematic risk, so one estimated model forecasts both expected returns and their covariance matrix. Estimation uses sparse variational inference with a joint posterior over loadings and factors. Because each predicted return is bilinear in a Gaussian state, the predictive covariance matrix and the cumulants of any portfolio have closed forms. In simulations, the estimator recovers the nonlinear maps and the variance parameters. For S&P 500 constituents over 1995–2024, nonlinear loadings rank stocks better than affine loadings and improve the Gaussian log score. Relative to IPCA, the resulting portfolios have higher Sharpe ratios, also net of trading costs, and the minimum-variance portfolio has lower volatility. The predicted variances rank stocks and months by risk but are too compressed."
+  },
+  {
+    "objectID": "publications/panelgp/index.html#in-brief",
+    "href": "publications/panelgp/index.html#in-brief",
+    "title": "PanelGP: A Probabilistic Factor Model for Asset-Return Panels",
+    "section": "In brief",
+    "text": "In brief\n\nModel. Firm characteristics drive the factor loadings and economic conditions drive the expected factors, both through Gaussian-process priors. With linear kernels the model reduces to IPCA; other kernels give smooth nonlinear maps.\nRisk as well as returns. Separate loading and factor innovations split idiosyncratic from systematic risk, so the same fitted model delivers expected returns and a full covariance matrix.\nClosed forms. Each predicted return is bilinear in a Gaussian state, so the predictive covariance and the cumulants of any portfolio are available in closed form.\nEvidence. On S&P 500 constituents over 1995–2024, nonlinear loadings rank stocks better than affine ones, and the portfolios beat IPCA on Sharpe ratio, also after trading costs."
+  },
+  {
+    "objectID": "publications/panelgp/index.html#data-and-replication",
+    "href": "publications/panelgp/index.html#data-and-replication",
+    "title": "PanelGP: A Probabilistic Factor Model for Asset-Return Panels",
+    "section": "Data and replication",
+    "text": "Data and replication\nThe empirical application uses monthly data on S&P 500 constituents: firm characteristics from Jensen, Kelly and Pedersen (2023), and macro-financial predictors from Goyal, Welch and Zafirov (2024). The replication package (MIT licence) reproduces every table, figure and number of the paper at three levels: tables and figures from the included results in a few minutes on any computer, the simulation study without any data, and the full empirical application with WRDS access and a GPU."
   },
   {
     "objectID": "publications/index.html",
     "href": "publications/index.html",
     "title": "Publications",
     "section": "",
-    "text": "2026\n    \n      PanelGP: A Probabilistic Factor Model for Asset-Return Panels\n      Andrea Ruglioni, Damir Filipovic\n      Working paper\n      \n    \n  \n\n  \n  \n  \n    2026\n    \n      Flagging Low Incoming Liquidity, and Explaining Why\n      Andrea Ruglioni, Aurel Ruben Mäder, Damir Filipovic\n      Working paper – with the Swiss National Bank\n      \n    \n  \n\n\n\nNo matching items"
+    "text": "2026\n    \n      PanelGP: A Probabilistic Factor Model for Asset-Return Panels\n      Andrea Ruglioni, Damir Filipovic\n      Working paper – arXiv:2611.04040\n      \n      \n        PDF\n        Code\n        \n        \n      \n      \n    \n  \n\n  \n  \n  \n    2026\n    \n      Flagging Low Incoming Liquidity, and Explaining Why\n      Andrea Ruglioni, Aurel Ruben Mäder, Damir Filipovic\n      Working paper – with the Swiss National Bank\n      \n    \n  \n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/index.html",
@@ -116,7 +130,7 @@
     "href": "index.html#publications",
     "title": "\nAndreaRuglioni\n",
     "section": "Publications",
-    "text": "Publications\n\n\n\n  \n  \n    2026\n    \n      PanelGP: A Probabilistic Factor Model for Asset-Return Panels\n      Andrea Ruglioni, Damir Filipovic\n      Working paper\n      \n    \n  \n\n  \n  \n    2026\n    \n      Flagging Low Incoming Liquidity, and Explaining Why\n      Andrea Ruglioni, Aurel Ruben Mäder, Damir Filipovic\n      Working paper – with the Swiss National Bank\n      \n    \n  \n\n\n\nNo matching items\n\n\nAll publications →"
+    "text": "Publications\n\n\n\n  \n  \n    2026\n    \n      PanelGP: A Probabilistic Factor Model for Asset-Return Panels\n      Andrea Ruglioni, Damir Filipovic\n      Working paper – arXiv:2611.04040\n      \n      \n        PDF\n        Code\n        \n        \n      \n      \n    \n  \n\n  \n  \n    2026\n    \n      Flagging Low Incoming Liquidity, and Explaining Why\n      Andrea Ruglioni, Aurel Ruben Mäder, Damir Filipovic\n      Working paper – with the Swiss National Bank\n      \n    \n  \n\n\n\nNo matching items\n\n\nAll publications →"
   },
   {
     "objectID": "publications/liquidity-monitoring/index.html",
