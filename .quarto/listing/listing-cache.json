@@ -3,13 +3,13 @@
     "blog\\index.qmd": [
       "."
     ],
-    "index.qmd": [
-      "../publications/*/**/index.qmd",
-      "../publications/*/**/index.md"
-    ],
     "publications\\index.qmd": [
       "**/index.qmd",
       "**/index.md"
+    ],
+    "index.qmd": [
+      "../publications/*/**/index.qmd",
+      "../publications/*/**/index.md"
     ]
   }
 }

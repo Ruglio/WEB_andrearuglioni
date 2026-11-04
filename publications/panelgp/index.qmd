@@ -58,11 +58,9 @@ $$
 
 Each component of the two maps gets an independent Gaussian-process prior, $\beta_h \sim \mathcal{GP}(0, k_{\beta,h})$ and $\phi_h \sim \mathcal{GP}(0, k_{\phi,h})$. Affine loading kernels with constant factor kernels give the structure of IPCA; RBF kernels allow nonlinear loadings and factor forecasts that depend on the context.
 
-The loading innovation is specific to each asset, while the factor innovation is common to all assets at a date, which separates idiosyncratic from systematic risk. The model is estimated by sparse variational inference.
-
 ### The predictive distribution
 
-For a new panel of $J$ returns, stack its realized loadings and factors into a latent state $\chi_\star$. Its predictive distribution is Gaussian, $\chi_\star \sim \mathcal{N}(m_\star, \tilde S_\star)$, and each new return is a quadratic form in this state,
+Consider a new panel of $J$ returns and stack its realized loadings and factors into a latent state $\chi_\star$. Propagating the Gaussian variational approximation of the posterior to this panel gives a Gaussian predictive distribution for the state, $\chi_\star \sim \mathcal{N}(m_\star, \tilde S_\star)$, and each new return is a quadratic form in it,
 
 $$
 r_{\star j} = \chi_\star^\top A_j\, \chi_\star + \sigma_r\,\epsilon_{\star j},
