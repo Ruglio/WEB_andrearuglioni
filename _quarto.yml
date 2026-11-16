@@ -44,12 +44,13 @@ website:
       - text: CV
         aria-label: "Curriculum vitae (PDF)"
         href: assets/cv/Andrea_Ruglioni_CV.pdf
+        target: _blank
 
   page-footer:
     left: >-
      &#169; 2024&ndash;2026 Andrea Ruglioni
     center: >-
-      [CV](https://ruglio.github.io/WEB_andrearuglioni/assets/cv/Andrea_Ruglioni_CV.pdf){.footer-link}
+      [CV](https://ruglio.github.io/WEB_andrearuglioni/assets/cv/Andrea_Ruglioni_CV.pdf){.footer-link target="_blank" rel="noopener"}
       [GitHub](https://github.com/Ruglio){.footer-link}
       [LinkedIn](https://linkedin.com/in/andrea-ruglioni){.footer-link}
       [ORCID](https://orcid.org/0009-0003-5208-5907){.footer-link}

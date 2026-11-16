@@ -48,7 +48,7 @@ I'm a PhD student in Quantitative Finance at EPFL. My research sits between ML, 
 
 Get in touch by [sending me an email](mailto:andrea.ruglioni@epfl.ch).
 
-[[CV](assets/cv/Andrea_Ruglioni_CV.pdf)]{.sw-link}
+[[CV](assets/cv/Andrea_Ruglioni_CV.pdf){target="_blank" rel="noopener"}]{.sw-link}
 [[GitHub](https://github.com/Ruglio)]{.sw-link}
 [[LinkedIn](https://linkedin.com/in/andrea-ruglioni)]{.sw-link}
 [[ORCID](https://orcid.org/0009-0003-5208-5907)]{.sw-link}
@@ -119,42 +119,25 @@ Get in touch by [sending me an email](mailto:andrea.ruglioni@epfl.ch).
 
 ::::: {.sw-section}
 
-## Talks {.unnumbered .unlisted}
-
-:::: {.sw-rows}
-
-::: {.sw-row}
-[Jan 2027]{.sw-when}
-[**[Bachelier Colloquium 2027](https://bachelier27.sciencesconf.org/)** [Upcoming]{.sw-tag}<br>Métabief]{.sw-what}
-:::
-
-::: {.sw-row}
-[Dec 2026]{.sw-when}
-[**SNB Brown Bag Seminar** [Upcoming]{.sw-tag}<br>Swiss National Bank]{.sw-what}
-:::
-
-::: {.sw-row}
-[Sep 2026]{.sw-when}
-[**[Conference in Honour of Freddy Delbaen's 80th Birthday](https://risklab.ethz.ch/news-and-events/conference-delbaen.html)**<br>ETH Zurich]{.sw-what}
-:::
-
-::: {.sw-row}
-[Jul 2026]{.sw-when}
-[**[13th Bachelier World Congress](https://eventi.unibo.it/bachelier)**<br>Bologna]{.sw-what}
-:::
-
-::::
-
-:::::
-
-
-::::: {.sw-section}
-
 ## Publications {.unnumbered .unlisted}
 
 ::: {#publications}
 :::
 
 [All publications &rarr;](publications/index.qmd){.sw-more}
+
+:::::
+
+
+::::: {.sw-section}
+
+## Talks {.unnumbered .unlisted}
+
+::: {.sw-list}
+- [Jan 2027]{.sw-when} [[Bachelier Colloquium 2027](https://bachelier27.sciencesconf.org/), Métabief [Upcoming]{.sw-tag}]{.sw-what}
+- [Dec 2026]{.sw-when} [SNB Brown Bag Seminar, Swiss National Bank [Upcoming]{.sw-tag}]{.sw-what}
+- [Sep 2026]{.sw-when} [[Conference in Honour of Freddy Delbaen's 80th Birthday](https://risklab.ethz.ch/news-and-events/conference-delbaen.html), ETH Zurich]{.sw-what}
+- [Jul 2026]{.sw-when} [[13th Bachelier World Congress](https://eventi.unibo.it/bachelier), Bologna]{.sw-what}
+:::
 
 :::::

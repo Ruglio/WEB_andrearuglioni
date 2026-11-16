@@ -401,14 +401,14 @@ main.content h1.sw-name {
 
 .sw-link a,
 .pub-links a,
-.sw-what strong a {
+.sw-list a {
     text-decoration: none;
 }
 
 /* North-east arrow drawn as a vector mask: the U+2197 character renders as an emoji on phones. */
 .sw-link a::after,
 .pub-links a::after,
-.sw-what strong a::after {
+.sw-list a::after {
     content: "";
     display: inline-block;
     width: 0.55em;
@@ -521,6 +521,33 @@ main.content .sw-section h2::before {
     color: var(--sw-red);
     border: 1px solid var(--sw-red);
     vertical-align: 0.12em;
+}
+
+/* Compact one-line list (talks): date | entry on the same grid, no rules. */
+.sw-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sw-list li {
+    display: grid;
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+    column-gap: var(--sw-gutter);
+    margin: 0;
+    padding: 0.3rem 0;
+}
+
+.sw-list li:first-child {
+    padding-top: 0;
+}
+
+.sw-list li > p {
+    display: contents;
+}
+
+.sw-list .sw-what {
+    grid-column: 3 / -1;
 }
 
 .sw-what > p:last-child {
@@ -996,6 +1023,16 @@ div.cookie-consent-footer a {
     .sw-row .sw-when,
     .sw-row .sw-what,
     .sw-row:not(:has(.sw-logo)) .sw-what {
+        grid-column: 1;
+    }
+
+    .sw-list li {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 0.45rem 0;
+    }
+
+    .sw-list .sw-when,
+    .sw-list .sw-what {
         grid-column: 1;
     }
 
