@@ -400,13 +400,15 @@ main.content h1.sw-name {
 }
 
 .sw-link a,
-.pub-links a {
+.pub-links a,
+.sw-what strong a {
     text-decoration: none;
 }
 
 /* North-east arrow drawn as a vector mask: the U+2197 character renders as an emoji on phones. */
 .sw-link a::after,
-.pub-links a::after {
+.pub-links a::after,
+.sw-what strong a::after {
     content: "";
     display: inline-block;
     width: 0.55em;
@@ -504,6 +506,21 @@ main.content .sw-section h2::before {
 
 .sw-what strong {
     font-weight: 600;
+}
+
+/* "Upcoming" / "Incoming" label next to an entry that hasn't happened yet. */
+.sw-tag {
+    display: inline-block;
+    margin-left: 0.45rem;
+    padding: 0 0.4rem;
+    font-size: 0.66rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sw-red);
+    border: 1px solid var(--sw-red);
+    vertical-align: 0.12em;
 }
 
 .sw-what > p:last-child {

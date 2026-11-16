@@ -101,9 +101,46 @@ Get in touch by [sending me an email](mailto:andrea.ruglioni@epfl.ch).
 :::: {.sw-rows}
 
 ::: {.sw-row}
+[May – Jul 2027]{.sw-when}
+[**Quantitative Research Intern** [Incoming]{.sw-tag}<br>Squarepoint Capital]{.sw-what}
+[![Squarepoint Capital](assets/images/squarepoint.svg){.nolightbox}]{.sw-logo}
+:::
+
+::: {.sw-row}
 [Jan 2026 – Present]{.sw-when}
 [**External Research Collaborator, Banking Operations Analysis**<br>Swiss National Bank]{.sw-what}
 [![Swiss National Bank](assets/images/snb.svg){.nolightbox}]{.sw-logo}
+:::
+
+::::
+
+:::::
+
+
+::::: {.sw-section}
+
+## Talks {.unnumbered .unlisted}
+
+:::: {.sw-rows}
+
+::: {.sw-row}
+[Jan 2027]{.sw-when}
+[**[Bachelier Colloquium 2027](https://bachelier27.sciencesconf.org/)** [Upcoming]{.sw-tag}<br>Métabief]{.sw-what}
+:::
+
+::: {.sw-row}
+[Dec 2026]{.sw-when}
+[**SNB Brown Bag Seminar** [Upcoming]{.sw-tag}<br>Swiss National Bank]{.sw-what}
+:::
+
+::: {.sw-row}
+[Sep 2026]{.sw-when}
+[**[Conference in Honour of Freddy Delbaen's 80th Birthday](https://risklab.ethz.ch/news-and-events/conference-delbaen.html)**<br>ETH Zurich]{.sw-what}
+:::
+
+::: {.sw-row}
+[Jul 2026]{.sw-when}
+[**[13th Bachelier World Congress](https://eventi.unibo.it/bachelier)**<br>Bologna]{.sw-what}
 :::
 
 ::::
