@@ -44,7 +44,7 @@ EPFL
 :::
 
 ::: {.sw-lede}
-I'm a PhD student in Quantitative Finance at EPFL. My research sits between ML, optimization, and finance. I enjoy building new methods, digging into empirical questions, and curiously explore ideas.
+I'm a PhD student in Quantitative Finance at EPFL. My research sits between ML, optimization, and finance. I enjoy building new methods, digging into empirical questions, and exploring ideas out of curiosity.
 
 Get in touch by [sending me an email](mailto:andrea.ruglioni@epfl.ch).
 
@@ -102,7 +102,7 @@ Get in touch by [sending me an email](mailto:andrea.ruglioni@epfl.ch).
 
 ::: {.sw-row}
 [May – Jul 2027]{.sw-when}
-[**Quantitative Research Intern** [Incoming]{.sw-tag}<br>Squarepoint Capital]{.sw-what}
+[**Quantitative Research Intern** [Incoming]{.sw-tag}<br>Squarepoint Capital, London]{.sw-what}
 [![Squarepoint Capital](assets/images/squarepoint.svg){.nolightbox}]{.sw-logo}
 :::
 
@@ -135,8 +135,9 @@ Get in touch by [sending me an email](mailto:andrea.ruglioni@epfl.ch).
 
 ::: {.sw-list}
 - [Jan 2027]{.sw-when} [[Bachelier Colloquium 2027](https://bachelier27.sciencesconf.org/), Métabief [Upcoming]{.sw-tag}]{.sw-what}
-- [Dec 2026]{.sw-when} [SNB Brown Bag Seminar, Swiss National Bank [Upcoming]{.sw-tag}]{.sw-what}
+- [Dec 2026]{.sw-when} [Brown Bag Seminar, Swiss National Bank [Upcoming]{.sw-tag}]{.sw-what}
 - [Sep 2026]{.sw-when} [[Conference in Honour of Freddy Delbaen's 80th Birthday](https://risklab.ethz.ch/news-and-events/conference-delbaen.html), ETH Zurich]{.sw-what}
+- [Jul 2026]{.sw-when} [[Swissquote Workshop on Graph Learning in Financial Networks](https://www.epfl.ch/schools/cdm/college-of-management-of-technology/research/swiss-finance-institute/events/other-events/workshop-on-graph-learning-in-financial-networks/), EPFL [Co-organizer]{.sw-tag .sw-tag-role}]{.sw-what}
 - [Jul 2026]{.sw-when} [[13th Bachelier World Congress](https://eventi.unibo.it/bachelier), Bologna]{.sw-what}
 :::
 

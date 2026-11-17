@@ -550,6 +550,13 @@ main.content .sw-section h2::before {
     grid-column: 3 / -1;
 }
 
+/* Role labels (e.g. "Co-organizer") use the tag shape in gray; red stays for time. */
+.sw-tag-role {
+    color: var(--sw-muted);
+    border-color: var(--sw-muted);
+    white-space: nowrap;
+}
+
 .sw-what > p:last-child {
     margin-bottom: 0;
 }
